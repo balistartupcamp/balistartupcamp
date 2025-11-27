@@ -4,6 +4,32 @@
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.font-space {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+@media screen and (max-width: 1440px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 764px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 564px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+.max-w-9xl {
+    max-width: 96rem;
 }
