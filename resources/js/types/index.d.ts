@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface Auth {
     user: User;
 }
@@ -18,4 +20,8 @@ export interface User {
     created_at: string;
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
+}
+
+export interface ButtonProps {
+    children: ReactNode;
 }

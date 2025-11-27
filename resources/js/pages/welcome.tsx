@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
@@ -17,7 +18,7 @@ export default function Welcome() {
                     {/* BACKGROUND HERO */}
                     {/* CONTENT HERO */}
                     <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-16 py-24">
-                        <div className="flex flex-row items-end justify-between gap-8">
+                        <div className="flex w-full flex-row items-end justify-between gap-8">
                             {/* TITLE HERO */}
                             <div className="flex flex-col items-start justify-start gap-5">
                                 <div className="mb-2 flex flex-col items-start justify-start gap-3">
@@ -42,6 +43,16 @@ export default function Welcome() {
                                 </p>
                             </div>
                             {/* TITLE HERO */}
+
+                            {/* ACTION HERO */}
+                            <div className="flex flex-col items-start justify-start gap-7">
+                                <Button>Daftar Sekarang</Button>
+                                <div className="flex flex-row items-center justify-start gap-3">
+                                    <img src="/assets/images/hero-person.webp" alt="hero person image bsc 2025" className="h-10" />
+                                    <p className="font-space text-lg text-white opacity-80">Untuk 4 - 5 orang per tim</p>
+                                </div>
+                            </div>
+                            {/* ACTION HERO */}
                         </div>
                     </div>
                     {/* CONTENT HERO */}
