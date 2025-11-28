@@ -1,4 +1,5 @@
 import Button from '@/components/Button';
+import Navbar from '@/components/Navbar';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
@@ -8,6 +9,10 @@ export default function Welcome() {
         <ReactLenis root>
             <Head title="Homepage"></Head>
             <main className="flex w-full flex-col items-center justify-center bg-[#070708]">
+                {/* NAVBAR */}
+                <Navbar />
+                {/* NAVBAR */}
+
                 {/* HERO SECTION */}
                 <section className="relative flex h-screen w-full items-center justify-center">
                     {/* BACKGROUND HERO */}
@@ -58,6 +63,16 @@ export default function Welcome() {
                     {/* CONTENT HERO */}
                 </section>
                 {/* HERO SECTION */}
+
+                {/* ABOUT SECTION */}
+                <section className="relative flex flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start px-16 py-24">
+                        <p className="font-space text-white opacity-70">About</p>
+                        <h2 className="font-space text-6xl font-bold text-white">Lorem ipsum dolor sit amet consectetur.</h2>
+                        <p className="font-space text-lg text-white opacity-80">Untuk 4 - 5 orang per tim</p>
+                    </div>
+                </section>
+                {/* ABOUT SECTION */}
             </main>
         </ReactLenis>
     );
