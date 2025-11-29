@@ -73,6 +73,76 @@ export default function Welcome() {
                     </div>
                 </section>
                 {/* ABOUT SECTION */}
+
+                {/* OVERLAY */}
+                <div className="pointer-events-none fixed bottom-0 left-0 h-25 w-full">
+                    <div className="absolute h-full w-full overflow-hidden" style={{ inset: 0 }}>
+                        <div
+                            className="pointer-none absolute z-[1] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 25%, rgba(0, 0, 0, 0) 37.5%)',
+                                backdropFilter: 'blur(0.0546875px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[2] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 12.5%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 37.5%, rgba(0, 0, 0, 0) 50%)',
+                                backdropFilter: 'blur(0.109375px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[3] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 25%, rgb(0, 0, 0) 37.5%, rgb(0, 0, 0) 50%, rgba(0, 0, 0, 0) 62.5%)',
+                                backdropFilter: 'blur(0.21875px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[4] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 37.5%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 62.5%, rgba(0, 0, 0, 0) 75%)',
+                                backdropFilter: 'blur(0.4375px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[5] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 62.5%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 87.5%)',
+                                backdropFilter: 'blur(0.875px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[6] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 62.5%, rgb(0, 0, 0) 75%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%)',
+                                backdropFilter: 'blur(1.75px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[7] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 75%, rgb(0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)',
+                                backdropFilter: 'blur(3.5px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                        <div
+                            className="pointer-none absolute z-[8] h-full w-full"
+                            style={{
+                                maskImage: 'linear-gradient(rgba(0, 0, 0, 0) 87.5%, rgb(0, 0, 0) 100%)',
+                                backdropFilter: 'blur(7px)',
+                                willChange: 'auto',
+                            }}
+                        ></div>
+                    </div>
+                </div>
             </main>
         </ReactLenis>
     );
