@@ -15,7 +15,7 @@ export default function Button({ children }: ButtonProps) {
                     {children}
                 </span>
             </div>
-            ;<div className="absolute z-0 h-6 w-[80%] bg-[#1B46F5] transition duration-300 group-hover:bg-[#1BE3F5]"></div>
+            <div className="absolute z-0 h-6 w-[80%] bg-[#1B46F5] transition duration-300 group-hover:bg-[#1BE3F5]"></div>
         </button>
     );
 }

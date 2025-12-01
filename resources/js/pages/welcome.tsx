@@ -1,5 +1,11 @@
 import Button from '@/components/Button';
+import MentorCard from '@/components/MentorCard';
 import Navbar from '@/components/Navbar';
+import ScheduleTable from '@/components/schedule/ScheduleTable';
+import ScheduleTableHead from '@/components/schedule/ScheduleTableHead';
+import ScheduleTableItem from '@/components/schedule/ScheduleTableItem';
+import SponsorItem from '@/components/SponsorItem';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
@@ -66,13 +72,46 @@ export default function Welcome() {
 
                 {/* ABOUT SECTION */}
                 <section className="relative flex flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start px-16 py-24">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         <p className="font-space text-white opacity-70">About</p>
-                        <h2 className="font-space text-6xl font-bold text-white">Lorem ipsum dolor sit amet consectetur.</h2>
-                        <p className="font-space text-lg text-white opacity-80">Untuk 4 - 5 orang per tim</p>
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                            The Beginning of Every <span className="text-gray-200 underline">Great Startup</span> Story
+                        </h2>
+                        <p className="font-space max-w-[768px] text-center text-lg text-white opacity-80">
+                            Bali Startup Camp menyatukan mahasiswa kreatif untuk merancang ide startup dan berkolaborasi dalam tim. Sebuah pengalaman
+                            intens yang membuka peluang dan membentuk masa depan inovasi.
+                        </p>
+
+                        {/* VIDEO */}
+                        <div className="mt-8 flex aspect-[21/11] w-full max-w-4xl items-center justify-center overflow-hidden rounded-lg bg-white"></div>
+                        <p className="font-space mt-3 text-center text-base text-white italic opacity-40">
+                            Video berdasarkan event Bali Startup Camp sebelumnya
+                        </p>
                     </div>
                 </section>
                 {/* ABOUT SECTION */}
+
+                {/* SPEAKERS */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                        {/* HEAD SECTION */}
+                        <div className="flex w-full flex-row items-end justify-between gap-6">
+                            <div className="flex max-w-[768px] flex-col items-start justify-start gap-4">
+                                <p className="font-space text-white opacity-70">Our Speakers</p>
+                                <h2 className="font-space mb-3 text-5xl font-bold text-white">
+                                    Expert Speakers Sharing <span className="text-gray-200 underline">Real World Wisdom</span>
+                                </h2>
+                            </div>
+                            <Button>Daftar Sekarang</Button>
+                        </div>
+                        {/* MENTOR LIST */}
+                        <div className="mt-6 grid w-full grid-cols-3 flex-wrap items-stretch justify-start gap-4 overflow-hidden">
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                        </div>
+                    </div>
+                </section>
 
                 {/* OVERLAY */}
                 <div className="pointer-events-none fixed bottom-0 left-0 h-25 w-full">
@@ -143,6 +182,223 @@ export default function Welcome() {
                         ></div>
                     </div>
                 </div>
+                {/* OVERLAY */}
+
+                {/* MENTOR'S SECTION */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                        <p className="font-space text-white opacity-70">Our Mentors</p>
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                            Meet the Mentors Guiding Your <span className="text-gray-200 underline">Startup Journey</span>
+                        </h2>
+                        <p className="font-space max-w-[564px] text-center text-lg text-white opacity-80">
+                            Dibimbing oleh para ahli industri yang telah membangun dan mengembangkan startup secara nyata.
+                        </p>
+
+                        {/* MENTOR LIST */}
+                        <div className="mt-6 grid w-full grid-cols-3 flex-wrap items-stretch justify-start gap-4 overflow-hidden">
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                            <MentorCard />
+                        </div>
+                    </div>
+                </section>
+                {/* MENTOR'S SECTION */}
+
+                {/* SCHEDULE SECTION */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                        {/* HEAD SECTION */}
+                        <div className="flex w-full flex-row items-end justify-between gap-6">
+                            <div className="flex max-w-[678px] flex-col items-start justify-start gap-4">
+                                <p className="font-space text-white opacity-70">Event's Schedule</p>
+                                <h2 className="font-space mb-3 text-5xl font-bold text-white">
+                                    Your Startup Camp Schedule and <span className="text-gray-200 underline">Daily Flow</span>
+                                </h2>
+                            </div>
+                            <Button>Daftar Sekarang</Button>
+                        </div>
+                        {/* SCHEDULE TABLE */}
+                        <ScheduleTable>
+                            <ScheduleTableHead>Day 1 Schedule</ScheduleTableHead>
+                            <ScheduleTableItem
+                                time="09.00 - 10.00 AM"
+                                total={1}
+                                title="Judulnya"
+                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
+                            />
+                            <ScheduleTableItem
+                                time="09.00 - 10.00 AM"
+                                total={1}
+                                title="Judulnya"
+                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
+                            />
+                            <ScheduleTableItem
+                                time="09.00 - 10.00 AM"
+                                total={1}
+                                title="Judulnya"
+                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
+                            />
+                            <ScheduleTableItem
+                                time="09.00 - 10.00 AM"
+                                total={1}
+                                title="Judulnya"
+                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
+                            />
+                        </ScheduleTable>
+                    </div>
+                </section>
+                {/* SCHEDULE SECTION */}
+
+                {/* SPONSOR SECTION */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                        <p className="font-space text-white opacity-70">Sponsors and Partners</p>
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                            Meet the Sponsors and Partners Fueling Our
+                            <span className="text-gray-200 underline"> Startup Journey</span>
+                        </h2>
+                        <p className="font-space max-w-[564px] text-center text-lg text-white opacity-80">
+                            Event ini didukung sponsor dan partner yang berperan besar dalam mewujudkan pengalaman terbaik bagi para peserta.
+                        </p>
+
+                        {/* SPONSOR LIST */}
+                        <div className="mt-4 grid w-full grid-cols-3 flex-row flex-wrap items-start justify-start gap-4">
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                            <SponsorItem />
+                        </div>
+                    </div>
+                </section>
+                {/* SPONSOR SECTION */}
+
+                {/* FAQ SECTION */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                        {/* TITLE */}
+                        <p className="font-space text-white opacity-70">Frequently Asked Question</p>
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                            The Answers to Your Most <span className="text-gray-200 underline">Common Questions</span>
+                        </h2>
+
+                        {/* TITLE */}
+                        <Accordion type="single" collapsible className="w-full max-w-xl">
+                            <AccordionItem value="item-1">
+                                <AccordionTrigger className="text-2xl text-white">Apakah peserta harus sudah memiliki tim?</AccordionTrigger>
+                                <AccordionContent className="text-xl text-white">
+                                    Ya. Peserta wajib mendaftar dalam bentuk tim karena seluruh proses akan berfokus pada pengembangan ide secara
+                                    kolaboratif.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem value="item-2">
+                                <AccordionTrigger className="text-2xl text-white">Apakah peserta harus sudah memiliki ide startup?</AccordionTrigger>
+                                <AccordionContent className="text-xl text-white">
+                                    Ya. Setiap tim harus datang dengan ide awal, yang kemudian akan dibimbing untuk diperdalam, divalidasi, dan
+                                    dimatangkan selama acara.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem value="item-3">
+                                <AccordionTrigger className="text-2xl text-white">Apa saja yang perlu dibawa oleh peserta?</AccordionTrigger>
+                                <AccordionContent className="text-xl text-white">
+                                    Laptop, charger, kebutuhan pribadi, serta bahan pendukung ide startup jika ada.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem value="item-4">
+                                <AccordionTrigger className="text-2xl text-white">Apakah akan ada sesi mentoring selama acara?</AccordionTrigger>
+                                <AccordionContent className="text-xl text-white">
+                                    Ya. Mentor berpengalaman akan membantu tim dalam proses validasi, strategi produk, dan persiapan pitching final.
+                                </AccordionContent>
+                            </AccordionItem>
+
+                            <AccordionItem value="item-5">
+                                <AccordionTrigger className="text-2xl text-white">Apakah acara ini berbayar?</AccordionTrigger>
+                                <AccordionContent className="text-xl text-white">
+                                    Informasi biaya pendaftaran tersedia pada halaman registrasi dan mencakup seluruh fasilitas acara.
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    </div>
+                </section>
+                {/* FAQ SECTION */}
+
+                {/* CALL TO ACTION SECTION */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl relative flex w-full flex-col gap-8 px-16 pt-24">
+                        <div className="relative w-full overflow-hidden">
+                            {/* BOX IMAGE */}
+                            <div className="moveLeft flex w-full flex-row items-center justify-start gap-4">
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                                <div className="aspect-video h-80 bg-gray-800">
+                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                </div>
+                            </div>
+
+                            {/* TEXT AREA */}
+                            <div className="absolute top-0 left-0 flex h-full w-full flex-row items-center justify-between gap-8 px-8">
+                                <h2 className="font-space relative z-10 w-full max-w-[468px] text-6xl font-semibold text-white">
+                                    Ready to Start Your Founder Journey?
+                                </h2>
+                                <div className="relative z-10 flex max-w-84 flex-col items-end justify-end gap-4">
+                                    <p className="font-space text-right text-lg text-white">
+                                        Daftarkan timmu sekarang dan mulai perjalanan membangun startup impianmu bersama BSC 2025
+                                    </p>
+                                    <Button>Daftar Sekarang</Button>
+                                </div>
+
+                                {/* OVERLAY */}
+                                <div className="bg-custom-gradient absolute top-0 left-0 h-full w-full"></div>
+                                {/* <div className="absolute top-0 left-0 h-full w-full bg-linear-to-r from-[#070708] to-[#070708]/5"></div> */}
+                            </div>
+                        </div>
+
+                        <div className="w-full">
+                            <img src="/assets/images/footer-logo.svg" alt="" />
+                        </div>
+                    </div>
+                </section>
+                {/* CALL TO ACTION SECTION */}
             </main>
         </ReactLenis>
     );

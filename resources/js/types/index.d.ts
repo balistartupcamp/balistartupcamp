@@ -25,3 +25,10 @@ export interface User {
 export interface ButtonProps {
     children: ReactNode;
 }
+
+export interface ShceduleTableItemProps {
+    time: string;
+    total: number;
+    title: string;
+    description: string;
+}
