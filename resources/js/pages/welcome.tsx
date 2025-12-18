@@ -9,8 +9,31 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from 'lucide-react';
+import { useEffect } from 'react';
 
 export default function Welcome() {
+    useEffect(() => {
+        const handleWheel = (e: WheelEvent) => {
+            if (e.ctrlKey || e.metaKey) {
+                e.preventDefault();
+            }
+        };
+
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-')) {
+                e.preventDefault();
+            }
+        };
+
+        window.addEventListener('wheel', handleWheel, { passive: false });
+        window.addEventListener('keydown', handleKeyDown, { passive: false });
+
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
     return (
         <ReactLenis root>
             <Head title="Homepage"></Head>
@@ -42,7 +65,7 @@ export default function Welcome() {
                                     {/* EVENT'S DATE */}
                                     <div className="font-space flex flex-row items-center justify-start gap-3 text-lg font-medium text-white">
                                         <CalendarIcon className="h-6" />
-                                        13 - 15 January 2025
+                                        23 - 25 January 2025
                                     </div>
                                     {/* EVENT'S DATE */}
                                 </div>
@@ -344,34 +367,34 @@ export default function Welcome() {
                             {/* BOX IMAGE */}
                             <div className="moveLeft flex w-full flex-row items-center justify-start gap-4">
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-1.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-2.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-3.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-4.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-5.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-6.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-7.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-1.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-2.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                                 <div className="aspect-video h-80 bg-gray-800">
-                                    <img src="/assets/images/hero-image.webp" alt="img" className="h-full w-full object-cover" />
+                                    <img src="/assets/images/event-img-3.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                             </div>
 
@@ -392,13 +415,92 @@ export default function Welcome() {
                                 {/* <div className="absolute top-0 left-0 h-full w-full bg-linear-to-r from-[#070708] to-[#070708]/5"></div> */}
                             </div>
                         </div>
-
-                        <div className="w-full">
-                            <img src="/assets/images/footer-logo.svg" alt="" />
-                        </div>
                     </div>
                 </section>
                 {/* CALL TO ACTION SECTION */}
+
+                {/* FOOTER */}
+                <footer className="mt-16 flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col justify-center">
+                        {/* MAIN FOOTER */}
+                        <div className="flex w-full flex-row items-start justify-between gap-5">
+                            {/* ABOUT FOOTER */}
+                            <div className="flex flex-col items-start justify-between gap-24">
+                                <div className="flex flex-col items-start justify-start gap-6">
+                                    <a href="/">
+                                        <img src="/assets/images/logo_bnw_full.webp" alt="logo bsc 2025" className="h-15" />
+                                    </a>
+                                    <p className="font-space max-w-sm text-lg text-white opacity-80">
+                                        Bali Startup Camp 2025 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem!
+                                    </p>
+                                </div>
+
+                                <div className="flex flex-col items-start justify-start gap-4">
+                                    <p className="font-space max-w-sm text-lg text-white opacity-80">Temukan kami di</p>
+                                    <div className="flex flex-row items-center justify-start gap-3">
+                                        <a href="https://instagram.com" className="text-white">
+                                            <InstagramIcon className="h-8 w-8 text-white opacity-60" />
+                                        </a>
+                                        <a href="https://instagram.com" className="text-white">
+                                            <FacebookIcon className="h-8 w-8 text-white opacity-60" />
+                                        </a>
+                                        <a href="https://instagram.com" className="text-white">
+                                            <YoutubeIcon className="h-8 w-8 text-white opacity-60" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* NAVIGATION FOOTER */}
+                            <div className="mt-19 flex flex-row items-start justify-end gap-32">
+                                <div className="flex flex-col items-start justify-start gap-2">
+                                    <p className="font-space text-lg font-medium text-white">Navigasi</p>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Home
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Tentang Kami
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Narasumber & Mentor
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Jadwal Acara
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Sponsor dan Partner
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        FAQ
+                                    </a>
+                                </div>
+                                <div className="flex flex-col items-start justify-start gap-2">
+                                    <p className="font-space text-lg font-medium text-white">Bantuan</p>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Admin - Abi
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Admin - Ezy
+                                    </a>
+                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                        Admin - Wira
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {/* MAIN FOOTER */}
+
+                        {/* COPYRIGHT */}
+                        <div className="mt-8 flex w-full flex-row items-center justify-between gap-5 border-t border-dashed border-white/30 pt-8">
+                            <p className="font-space max-w-sm text-lg text-white opacity-80">© 2025 BaliStartupCamp. All rights reserved.</p>
+                            <p className="font-space max-w-sm text-lg text-white opacity-80">Desain oleh Panitia BSC 2025</p>
+                        </div>
+                        {/* COPYRIGHT */}
+                    </div>
+                    <div className="w-full">
+                        <img src="/assets/images/footer-logo.svg" alt="" className="w-full" />
+                    </div>
+                </footer>
             </main>
         </ReactLenis>
     );

@@ -113,8 +113,8 @@ export default function Navbar() {
                 style={{ display: menuOpen ? 'flex' : 'none', opacity: 0 }}
             >
                 {/* IMAGE AREA  */}
-                <div className="h-full w-[480px] min-w-[480px] overflow-hidden">
-                    <img src="/assets/images/hero-image.webp" alt="bsc 2025 image" ref={imageRef} className="h-full w-full object-cover" />
+                <div className="relative h-full w-[480px] min-w-[480px] overflow-hidden">
+                    <img src="/assets/images/navbar_img.webp" alt="bsc 2025 image" ref={imageRef} className="h-full w-full object-cover" />
                 </div>
 
                 {/* NAVIGATION LIST */}
