@@ -10,30 +10,29 @@ import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from 'lucide-react';
-import { useEffect } from 'react';
 
 export default function Welcome() {
-    useEffect(() => {
-        const handleWheel = (e: WheelEvent) => {
-            if (e.ctrlKey || e.metaKey) {
-                e.preventDefault();
-            }
-        };
+    // useEffect(() => {
+    //     const handleWheel = (e: WheelEvent) => {
+    //         if (e.ctrlKey || e.metaKey) {
+    //             e.preventDefault();
+    //         }
+    //     };
 
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-')) {
-                e.preventDefault();
-            }
-        };
+    //     const handleKeyDown = (e: KeyboardEvent) => {
+    //         if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-')) {
+    //             e.preventDefault();
+    //         }
+    //     };
 
-        window.addEventListener('wheel', handleWheel, { passive: false });
-        window.addEventListener('keydown', handleKeyDown, { passive: false });
+    //     window.addEventListener('wheel', handleWheel, { passive: false });
+    //     window.addEventListener('keydown', handleKeyDown, { passive: false });
 
-        return () => {
-            window.removeEventListener('wheel', handleWheel);
-            window.removeEventListener('keydown', handleKeyDown);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('wheel', handleWheel);
+    //         window.removeEventListener('keydown', handleKeyDown);
+    //     };
+    // }, []);
     return (
         <ReactLenis root>
             <Head title="Homepage"></Head>
@@ -51,28 +50,28 @@ export default function Welcome() {
                     </div>
                     {/* BACKGROUND HERO */}
                     {/* CONTENT HERO */}
-                    <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-16 py-24">
-                        <div className="flex w-full flex-row items-end justify-between gap-8">
+                    <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-6 py-14 sm:px-12 sm:py-20 md:px-16 md:py-24">
+                        <div className="flex w-full flex-col items-start justify-between gap-6 sm:gap-7 md:flex-row md:items-end md:gap-8">
                             {/* TITLE HERO */}
-                            <div className="flex flex-col items-start justify-start gap-5">
+                            <div className="flex flex-col items-start justify-start gap-3 sm:gap-4 md:gap-5">
                                 <div className="mb-2 flex flex-col items-start justify-start gap-3">
                                     {/* EVENT'S LOCATION */}
-                                    <div className="font-space flex flex-row items-center justify-start gap-3 text-lg font-medium text-white">
-                                        <MapPinIcon className="h-6" />
+                                    <div className="font-space flex flex-row items-center justify-start gap-1 text-xs font-medium text-white sm:gap-3 sm:text-base md:text-lg">
+                                        <MapPinIcon className="h-4 sm:h-5 md:h-6" />
                                         4th Floor Primakara University
                                     </div>
                                     {/* EVENT'S LOCATION */}
                                     {/* EVENT'S DATE */}
-                                    <div className="font-space flex flex-row items-center justify-start gap-3 text-lg font-medium text-white">
-                                        <CalendarIcon className="h-6" />
+                                    <div className="font-space flex flex-row items-center justify-start gap-1 text-xs font-medium text-white sm:gap-3 sm:text-base md:text-lg">
+                                        <CalendarIcon className="h-4 sm:h-5 md:h-6" />
                                         23 - 25 January 2025
                                     </div>
                                     {/* EVENT'S DATE */}
                                 </div>
-                                <h1 className="font-space text-8xl font-bold text-white">
+                                <h1 className="font-space text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-8xl">
                                     Bali Startup <br /> Camp 2025
                                 </h1>
-                                <p className="font-space text-lg text-white opacity-80">
+                                <p className="font-space text-sm text-white opacity-80 sm:text-base md:text-lg">
                                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati corporis odit fugit!
                                 </p>
                             </div>
@@ -81,9 +80,9 @@ export default function Welcome() {
                             {/* ACTION HERO */}
                             <div className="flex flex-col items-start justify-start gap-7">
                                 <Button>Daftar Sekarang</Button>
-                                <div className="flex flex-row items-center justify-start gap-3">
+                                <div className="hidden flex-row items-center justify-start gap-3 md:flex">
                                     <img src="/assets/images/hero-person.webp" alt="hero person image bsc 2025" className="h-10" />
-                                    <p className="font-space text-lg text-white opacity-80">Untuk 4 - 5 orang per tim</p>
+                                    <p className="font-space text-sm text-white opacity-80 sm:text-base md:text-lg">Untuk 4 - 5 orang per tim</p>
                                 </div>
                             </div>
                             {/* ACTION HERO */}
@@ -94,7 +93,7 @@ export default function Welcome() {
                 {/* HERO SECTION */}
 
                 {/* ABOUT SECTION */}
-                <section className="relative flex flex-col items-center justify-center">
+                <section className="relative flex hidden flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         <p className="font-space text-white opacity-70">About</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
@@ -115,7 +114,7 @@ export default function Welcome() {
                 {/* ABOUT SECTION */}
 
                 {/* SPEAKERS */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-row items-end justify-between gap-6">
@@ -208,7 +207,7 @@ export default function Welcome() {
                 {/* OVERLAY */}
 
                 {/* MENTOR'S SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         <p className="font-space text-white opacity-70">Our Mentors</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
@@ -236,7 +235,7 @@ export default function Welcome() {
                 {/* MENTOR'S SECTION */}
 
                 {/* SCHEDULE SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-row items-end justify-between gap-6">
@@ -281,7 +280,7 @@ export default function Welcome() {
                 {/* SCHEDULE SECTION */}
 
                 {/* SPONSOR SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         <p className="font-space text-white opacity-70">Sponsors and Partners</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
@@ -309,7 +308,7 @@ export default function Welcome() {
                 {/* SPONSOR SECTION */}
 
                 {/* FAQ SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         {/* TITLE */}
                         <p className="font-space text-white opacity-70">Frequently Asked Question</p>
@@ -361,7 +360,7 @@ export default function Welcome() {
                 {/* FAQ SECTION */}
 
                 {/* CALL TO ACTION SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl relative flex w-full flex-col gap-8 px-16 pt-24">
                         <div className="relative w-full overflow-hidden">
                             {/* BOX IMAGE */}
@@ -420,7 +419,7 @@ export default function Welcome() {
                 {/* CALL TO ACTION SECTION */}
 
                 {/* FOOTER */}
-                <footer className="mt-16 flex w-full flex-col items-center justify-center">
+                <footer className="mt-16 flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col justify-center">
                         {/* MAIN FOOTER */}
                         <div className="flex w-full flex-row items-start justify-between gap-5">
@@ -454,7 +453,7 @@ export default function Welcome() {
                             {/* NAVIGATION FOOTER */}
                             <div className="mt-19 flex flex-row items-start justify-end gap-32">
                                 <div className="flex flex-col items-start justify-start gap-2">
-                                    <p className="font-space text-lg font-medium text-white">Navigasi</p>
+                                    <p className="font-space text-sm font-medium text-white sm:text-base md:text-lg">Navigasi</p>
                                     <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
                                         Home
                                     </a>
@@ -475,7 +474,7 @@ export default function Welcome() {
                                     </a>
                                 </div>
                                 <div className="flex flex-col items-start justify-start gap-2">
-                                    <p className="font-space text-lg font-medium text-white">Bantuan</p>
+                                    <p className="font-space text-sm font-medium text-white sm:text-base md:text-lg">Bantuan</p>
                                     <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
                                         Admin - Abi
                                     </a>
