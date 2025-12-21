@@ -211,18 +211,18 @@ export default function Welcome() {
                 {/* OVERLAY */}
 
                 {/* MENTOR'S SECTION */}
-                <section className="relative flex hidden w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
-                        <p className="font-space text-white opacity-70">Our Mentors</p>
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                        <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Our Mentors</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             Meet the Mentors Guiding Your <span className="text-gray-200 underline">Startup Journey</span>
                         </h2>
-                        <p className="font-space max-w-[564px] text-center text-lg text-white opacity-80">
+                        <p className="font-space max-w-[564px] text-center text-sm text-white opacity-80 sm:text-base md:text-lg">
                             Dibimbing oleh para ahli industri yang telah membangun dan mengembangkan startup secara nyata.
                         </p>
 
                         {/* MENTOR LIST */}
-                        <div className="mt-6 grid w-full grid-cols-3 flex-wrap items-stretch justify-start gap-4 overflow-hidden">
+                        <div className="mt-6 grid w-full grid-cols-1 flex-wrap items-stretch justify-start gap-4 overflow-hidden sm:grid-cols-2 md:grid-cols-3">
                             <MentorCard />
                             <MentorCard />
                             <MentorCard />
