@@ -50,7 +50,7 @@ export default function Welcome() {
                     </div>
                     {/* BACKGROUND HERO */}
                     {/* CONTENT HERO */}
-                    <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-6 py-14 sm:px-12 sm:py-16 sm:py-20 md:px-16 md:py-10 md:py-24">
+                    <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-6 py-14 sm:px-12 sm:py-20 md:px-16 md:py-24">
                         <div className="flex w-full flex-col items-start justify-between gap-6 sm:gap-7 md:flex-row md:items-end md:gap-8">
                             {/* TITLE HERO */}
                             <div className="flex flex-col items-start justify-start gap-3 sm:gap-4 md:gap-5">
