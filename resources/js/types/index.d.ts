@@ -28,7 +28,7 @@ export interface ButtonProps {
 
 export interface ShceduleTableItemProps {
     time: string;
-    total: number;
+    total: string;
     title: string;
     description: string;
 }

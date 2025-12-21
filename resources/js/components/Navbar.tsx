@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { useLenis } from 'lenis/react';
 import { useEffect, useRef, useState } from 'react';
 
-export default function Navbar() {
+export default function Navbar({ scrollToSection }: { scrollToSection: (sectionId: string) => void }) {
     const [hidden, setHidden] = useState(false);
     const [lastScroll, setLastScroll] = useState(0);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -44,7 +44,7 @@ export default function Navbar() {
 
         const menuOverlay = menuRef.current;
         const linksContainer = menuLinksRef.current;
-        const links = linksContainer.querySelectorAll('a.alink');
+        const links = linksContainer.querySelectorAll('button.alink');
         const image = imageRef.current;
         const social = socialRef.current;
 
@@ -76,6 +76,11 @@ export default function Navbar() {
             setMenuOpen(true);
             setHidden(true);
         }
+    };
+
+    const hanlderNavigate = (sectionId: string) => {
+        handleMenuToggle();
+        scrollToSection(sectionId);
     };
 
     return (
@@ -119,39 +124,54 @@ export default function Navbar() {
 
                 {/* NAVIGATION LIST */}
                 <div ref={menuLinksRef} className="flex w-full flex-col items-start justify-start gap-15 px-8 md:ps-0 md:pe-20">
-                    <a href="#" className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl">
+                    <button
+                        onClick={() => hanlderNavigate('about')}
+                        className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl"
+                    >
                         About Event
-                    </a>
-                    <a href="#" className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl">
+                    </button>
+                    <button
+                        onClick={() => hanlderNavigate('mentors')}
+                        className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl"
+                    >
                         Our Mentors
-                    </a>
-                    <a href="#" className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl">
+                    </button>
+                    <button
+                        onClick={() => hanlderNavigate('speakers')}
+                        className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl"
+                    >
                         Valuable Speakers
-                    </a>
-                    <a href="#" className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl">
+                    </button>
+                    <button
+                        onClick={() => hanlderNavigate('schedule')}
+                        className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl"
+                    >
                         Event Timeline
-                    </a>
-                    <a href="#" className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl">
+                    </button>
+                    <button
+                        onClick={() => hanlderNavigate('cta')}
+                        className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl"
+                    >
                         Best Memories
-                    </a>
+                    </button>
                     <div ref={socialRef} className="hidden w-full flex-row items-center justify-between gap-3 sm:flex">
                         <a href="https://balistartup.com" className="font-space hidden text-xl font-medium text-white md:flex">
                             balistartup.com
                         </a>
                         <span className="font-space text-xl font-medium text-white">|</span>
-                        <a href="" className="font-space text-xl font-medium text-white">
+                        <a href="https://www.instagram.com/bali.startup/" className="font-space text-xl font-medium text-white">
                             Instagram
                         </a>
                         <span className="font-space text-xl font-medium text-white">|</span>
-                        <a href="" className="font-space text-xl font-medium text-white">
+                        <a href="https://web.facebook.com/primakara/?locale=id_ID&_rdc=1&_rdr#" className="font-space text-xl font-medium text-white">
                             Facebook
                         </a>
                         <span className="font-space flex text-xl font-medium text-white">|</span>
-                        <a href="" className="font-space flex text-xl font-medium text-white">
+                        <a href="https://www.youtube.com/@balistartupcamp4465" className="font-space flex text-xl font-medium text-white">
                             Youtube
                         </a>
                         <span className="font-space text-xl font-medium text-white">|</span>
-                        <a href="" className="font-space text-xl font-medium text-white">
+                        <a href="https://www.tiktok.com/@primakara.univ?_r=1&_t=ZS-92PMfLLajy4" className="font-space text-xl font-medium text-white">
                             Tiktok
                         </a>
                     </div>

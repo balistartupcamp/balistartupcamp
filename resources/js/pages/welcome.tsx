@@ -6,43 +6,69 @@ import ScheduleTableHead from '@/components/schedule/ScheduleTableHead';
 import ScheduleTableItem from '@/components/schedule/ScheduleTableItem';
 import SponsorItem from '@/components/SponsorItem';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import FAQDatas from '@/datas/faq.json';
+import RundownDatas from '@/datas/rundown.json';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
 import { FacebookIcon, InstagramIcon, YoutubeIcon } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 export default function Welcome() {
-    // useEffect(() => {
-    //     const handleWheel = (e: WheelEvent) => {
-    //         if (e.ctrlKey || e.metaKey) {
-    //             e.preventDefault();
-    //         }
-    //     };
+    const homeSection = useRef<HTMLDivElement>(null);
+    const aboutSection = useRef<HTMLDivElement>(null);
+    const speakersSection = useRef<HTMLDivElement>(null);
+    const mentorSection = useRef<HTMLDivElement>(null);
+    const scheduleSection = useRef<HTMLDivElement>(null);
+    const sponsorSection = useRef<HTMLDivElement>(null);
+    const faqSection = useRef<HTMLDivElement>(null);
+    const ctaSection = useRef<HTMLDivElement>(null);
 
-    //     const handleKeyDown = (e: KeyboardEvent) => {
-    //         if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-')) {
-    //             e.preventDefault();
-    //         }
-    //     };
+    const scrollToSection = (sectionId: string) => {
+        console.log(sectionId);
+        const sectionRef = {
+            home: homeSection,
+            about: aboutSection,
+            speakers: speakersSection,
+            mentors: mentorSection,
+            schedule: scheduleSection,
+            sponsor: sponsorSection,
+            faq: faqSection,
+            cta: ctaSection,
+        }[sectionId];
+        if (sectionRef && sectionRef.current) {
+            sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
-    //     window.addEventListener('wheel', handleWheel, { passive: false });
-    //     window.addEventListener('keydown', handleKeyDown, { passive: false });
-
-    //     return () => {
-    //         window.removeEventListener('wheel', handleWheel);
-    //         window.removeEventListener('keydown', handleKeyDown);
-    //     };
-    // }, []);
+    useEffect(() => {
+        // const handleWheel = (e: WheelEvent) => {
+        //     if (e.ctrlKey || e.metaKey) {
+        //         e.preventDefault();
+        //     }
+        // };
+        // const handleKeyDown = (e: KeyboardEvent) => {
+        //     if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-')) {
+        //         e.preventDefault();
+        //     }
+        // };
+        // window.addEventListener('wheel', handleWheel, { passive: false });
+        // window.addEventListener('keydown', handleKeyDown, { passive: false });
+        // return () => {
+        //     window.removeEventListener('wheel', handleWheel);
+        //     window.removeEventListener('keydown', handleKeyDown);
+        // };
+    }, []);
     return (
         <ReactLenis root>
             <Head title="Homepage"></Head>
             <main className="flex w-full flex-col items-center justify-center bg-[#070708]">
                 {/* NAVBAR */}
-                <Navbar />
+                <Navbar scrollToSection={scrollToSection} />
                 {/* NAVBAR */}
 
                 {/* HERO SECTION */}
-                <section className="relative flex h-screen w-full items-center justify-center">
+                <section ref={homeSection} className="relative flex h-screen w-full items-center justify-center">
                     {/* BACKGROUND HERO */}
                     <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center overflow-hidden">
                         <img src="/assets/images/hero-image.webp" alt="hero image bali startup camp 2025" className="h-full w-full object-cover" />
@@ -93,7 +119,7 @@ export default function Welcome() {
                 {/* HERO SECTION */}
 
                 {/* ABOUT SECTION */}
-                <section className="relative flex flex-col items-center justify-center">
+                <section ref={aboutSection} className="relative flex flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-2 px-6 py-10 sm:gap-3 sm:px-12 sm:py-16 md:gap-4 md:px-16 md:py-24">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">About</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -118,7 +144,7 @@ export default function Welcome() {
                 {/* ABOUT SECTION */}
 
                 {/* SPEAKERS */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section ref={speakersSection} className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -211,7 +237,7 @@ export default function Welcome() {
                 {/* OVERLAY */}
 
                 {/* MENTOR'S SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section ref={mentorSection} className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Our Mentors</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -239,7 +265,7 @@ export default function Welcome() {
                 {/* MENTOR'S SECTION */}
 
                 {/* SCHEDULE SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section ref={scheduleSection} className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -252,39 +278,26 @@ export default function Welcome() {
                             <Button>Daftar Sekarang</Button>
                         </div>
                         {/* SCHEDULE TABLE */}
-                        <ScheduleTable>
-                            <ScheduleTableHead>Day 1 Schedule</ScheduleTableHead>
-                            <ScheduleTableItem
-                                time="09.00 - 10.00 AM"
-                                total={1}
-                                title="Judulnya"
-                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
-                            />
-                            <ScheduleTableItem
-                                time="09.00 - 10.00 AM"
-                                total={1}
-                                title="Judulnya"
-                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
-                            />
-                            <ScheduleTableItem
-                                time="09.00 - 10.00 AM"
-                                total={1}
-                                title="Judulnya"
-                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
-                            />
-                            <ScheduleTableItem
-                                time="09.00 - 10.00 AM"
-                                total={1}
-                                title="Judulnya"
-                                description="Contoh deskripsi agak sedikit panjang untuk deskripsi acara"
-                            />
-                        </ScheduleTable>
+                        {RundownDatas.map((rundowndData, key) => (
+                            <ScheduleTable key={key}>
+                                <ScheduleTableHead>{rundowndData.title} Schedule</ScheduleTableHead>
+                                {rundowndData.data.map((data, index) => (
+                                    <ScheduleTableItem
+                                        key={index}
+                                        time={data.time}
+                                        total={data.duration}
+                                        title={data.activity}
+                                        description={data.description}
+                                    />
+                                ))}
+                            </ScheduleTable>
+                        ))}
                     </div>
                 </section>
                 {/* SCHEDULE SECTION */}
 
                 {/* SPONSOR SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section ref={sponsorSection} className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Sponsors and Partners</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -312,7 +325,7 @@ export default function Welcome() {
                 {/* SPONSOR SECTION */}
 
                 {/* FAQ SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section ref={faqSection} className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         {/* TITLE */}
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Frequently Asked Question</p>
@@ -322,22 +335,19 @@ export default function Welcome() {
 
                         {/* TITLE */}
                         <Accordion type="single" collapsible className="w-full max-w-xl">
-                            <AccordionItem value="item-1">
-                                <AccordionTrigger className="text-lg text-white sm:text-xl md:text-2xl">
-                                    Apakah peserta harus sudah memiliki tim?
-                                </AccordionTrigger>
-                                <AccordionContent className="text-sm text-white sm:text-lg md:text-xl">
-                                    Ya. Peserta wajib mendaftar dalam bentuk tim karena seluruh proses akan berfokus pada pengembangan ide secara
-                                    kolaboratif.
-                                </AccordionContent>
-                            </AccordionItem>
+                            {FAQDatas.map((faq, index) => (
+                                <AccordionItem value={`item-${index}`} key={index}>
+                                    <AccordionTrigger className="text-lg text-white sm:text-xl md:text-2xl">{faq.question}</AccordionTrigger>
+                                    <AccordionContent className="text-sm text-white sm:text-lg md:text-xl">{faq.answer}</AccordionContent>
+                                </AccordionItem>
+                            ))}
                         </Accordion>
                     </div>
                 </section>
                 {/* FAQ SECTION */}
 
                 {/* CALL TO ACTION SECTION */}
-                <section className="relative flex w-full flex-col items-center justify-center">
+                <section ref={ctaSection} className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl relative flex w-full flex-col gap-8 px-0 pt-24 sm:px-0 md:px-16">
                         <div className="relative w-full overflow-hidden">
                             {/* BOX IMAGE */}
@@ -405,21 +415,22 @@ export default function Welcome() {
                                     <a href="/">
                                         <img src="/assets/images/logo_bnw_full.webp" alt="logo bsc 2025" className="h-10 sm:h-12 md:h-15" />
                                     </a>
-                                    <p className="font-space text-sm text-white opacity-80 sm:text-base md:max-w-sm md:text-lg">
-                                        Bali Startup Camp 2025 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem!
+                                    <p className="font-space text-sm text-white opacity-80 sm:text-base md:max-w-lg md:text-lg">
+                                        Bali Startup Camp 2025 adalah program intensif tahunan dari Primakara University untuk membentuk startup
+                                        digital melalui proses ideasi, mentoring, dan pitching
                                     </p>
                                 </div>
 
                                 <div className="flex flex-col items-start justify-start gap-4">
                                     <p className="font-space max-w-sm text-sm text-white opacity-80 sm:text-base md:text-lg">Temukan kami di</p>
                                     <div className="flex flex-row items-center justify-start gap-3">
-                                        <a href="https://instagram.com" className="text-white">
+                                        <a href="https://www.instagram.com/bali.startup/" className="text-white">
                                             <InstagramIcon className="h-6 w-6 text-white opacity-60 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                                         </a>
-                                        <a href="https://instagram.com" className="text-white">
+                                        <a href="https://web.facebook.com/primakara/?locale=id_ID&_rdc=1&_rdr#" className="text-white">
                                             <FacebookIcon className="h-6 w-6 text-white opacity-60 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                                         </a>
-                                        <a href="https://instagram.com" className="text-white">
+                                        <a href="https://www.youtube.com/@balistartupcamp4465" className="text-white">
                                             <YoutubeIcon className="h-6 w-6 text-white opacity-60 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                                         </a>
                                     </div>
@@ -430,59 +441,59 @@ export default function Welcome() {
                             <div className="mt-8 flex w-full flex-row items-start justify-start gap-16 md:mt-19 md:w-auto md:justify-end lg:gap-24 xl:gap-32">
                                 <div className="flex flex-col items-start justify-start gap-2">
                                     <p className="font-space text-sm font-medium text-white sm:text-base md:text-lg">Navigasi</p>
-                                    <a
-                                        href="#"
+                                    <button
+                                        onClick={() => scrollToSection('home')}
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Home
-                                    </a>
-                                    <a
-                                        href="#"
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('about')}
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Tentang Kami
-                                    </a>
-                                    <a
-                                        href="#"
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('speakers')}
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Narasumber & Mentor
-                                    </a>
-                                    <a
-                                        href="#"
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('schedule')}
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Jadwal Acara
-                                    </a>
-                                    <a
-                                        href="#"
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('sponsor')}
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Sponsor dan Partner
-                                    </a>
-                                    <a
-                                        href="#"
+                                    </button>
+                                    <button
+                                        onClick={() => scrollToSection('faq')}
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         FAQ
-                                    </a>
+                                    </button>
                                 </div>
                                 <div className="flex flex-col items-start justify-start gap-2">
                                     <p className="font-space text-sm font-medium text-white sm:text-base md:text-lg">Bantuan</p>
                                     <a
-                                        href="#"
+                                        href="https://wa.me/6282147078126?text=Halo%20kak%2C%20saya%20perlu%20bantuan%20terkait%20BSC%202025"
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Admin - Abi
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://wa.me/6287862181829?text=Halo%20kak%2C%20saya%20perlu%20bantuan%20terkait%20BSC%202025"
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Admin - Ezy
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://wa.me/62895622771393?text=Halo%20kak%2C%20saya%20perlu%20bantuan%20terkait%20BSC%202025"
                                         className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
                                     >
                                         Admin - Wira

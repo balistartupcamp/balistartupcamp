@@ -6,7 +6,7 @@ export default function ScheduleTableItem({ time, total, title, description }: S
             {/* TIME */}
             <div className="flex flex-1 flex-row items-center justify-start gap-1 sm:flex-col sm:items-start sm:gap-3">
                 <h3 className="font-space text-xl font-medium text-white opacity-85 sm:text-2xl md:text-3xl">{time}</h3>
-                <p className="font-space text-sm text-white opacity-40 sm:text-base md:text-lg">[{total} jam]</p>
+                <p className="font-space text-sm text-white opacity-40 sm:text-base md:text-lg">[{total}]</p>
             </div>
 
             {/* DETAIL */}
