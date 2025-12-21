@@ -284,19 +284,19 @@ export default function Welcome() {
                 {/* SCHEDULE SECTION */}
 
                 {/* SPONSOR SECTION */}
-                <section className="relative flex hidden w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
-                        <p className="font-space text-white opacity-70">Sponsors and Partners</p>
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                        <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Sponsors and Partners</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             Meet the Sponsors and Partners Fueling Our
                             <span className="text-gray-200 underline"> Startup Journey</span>
                         </h2>
-                        <p className="font-space max-w-[564px] text-center text-lg text-white opacity-80">
+                        <p className="font-space max-w-[564px] text-center text-sm text-white opacity-80 sm:text-base md:text-lg">
                             Event ini didukung sponsor dan partner yang berperan besar dalam mewujudkan pengalaman terbaik bagi para peserta.
                         </p>
 
                         {/* SPONSOR LIST */}
-                        <div className="mt-4 grid w-full grid-cols-3 flex-row flex-wrap items-start justify-start gap-4">
+                        <div className="mt-4 grid w-full grid-cols-2 flex-row flex-wrap items-start justify-start gap-2 sm:gap-3 md:grid-cols-3 md:gap-4">
                             <SponsorItem />
                             <SponsorItem />
                             <SponsorItem />
