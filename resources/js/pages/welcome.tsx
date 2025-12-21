@@ -119,9 +119,9 @@ export default function Welcome() {
 
                 {/* SPEAKERS */}
                 <section className="relative flex w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
                         {/* HEAD SECTION */}
-                        <div className="flex w-full flex-row items-end justify-between gap-6">
+                        <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
                             <div className="flex max-w-[768px] flex-col items-start justify-start gap-4">
                                 <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Our Speakers</p>
                                 <h2 className="font-space mb-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -131,7 +131,7 @@ export default function Welcome() {
                             <Button>Daftar Sekarang</Button>
                         </div>
                         {/* MENTOR LIST */}
-                        <div className="mt-6 grid w-full grid-cols-3 flex-wrap items-stretch justify-start gap-4 overflow-hidden">
+                        <div className="smgrid-cols-2 mt-6 grid w-full grid-cols-1 flex-wrap items-stretch justify-start gap-4 overflow-hidden md:grid-cols-3">
                             <MentorCard />
                             <MentorCard />
                             <MentorCard />
