@@ -68,7 +68,7 @@ export default function Welcome() {
                                     </div>
                                     {/* EVENT'S DATE */}
                                 </div>
-                                <h1 className="font-space text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-8xl">
+                                <h1 className="font-space text-3xl font-bold text-white sm:text-4xl md:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
                                     Bali Startup <br /> Camp 2025
                                 </h1>
                                 <p className="font-space text-sm text-white opacity-80 sm:text-base md:text-lg">
@@ -118,13 +118,13 @@ export default function Welcome() {
                 {/* ABOUT SECTION */}
 
                 {/* SPEAKERS */}
-                <section className="relative flex hidden w-full flex-col items-center justify-center">
+                <section className="relative flex w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-row items-end justify-between gap-6">
                             <div className="flex max-w-[768px] flex-col items-start justify-start gap-4">
-                                <p className="font-space text-white opacity-70">Our Speakers</p>
-                                <h2 className="font-space mb-3 text-5xl font-bold text-white">
+                                <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Our Speakers</p>
+                                <h2 className="font-space mb-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                                     Expert Speakers Sharing <span className="text-gray-200 underline">Real World Wisdom</span>
                                 </h2>
                             </div>
@@ -214,7 +214,7 @@ export default function Welcome() {
                 <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         <p className="font-space text-white opacity-70">Our Mentors</p>
-                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             Meet the Mentors Guiding Your <span className="text-gray-200 underline">Startup Journey</span>
                         </h2>
                         <p className="font-space max-w-[564px] text-center text-lg text-white opacity-80">
@@ -245,7 +245,7 @@ export default function Welcome() {
                         <div className="flex w-full flex-row items-end justify-between gap-6">
                             <div className="flex max-w-[678px] flex-col items-start justify-start gap-4">
                                 <p className="font-space text-white opacity-70">Event's Schedule</p>
-                                <h2 className="font-space mb-3 text-5xl font-bold text-white">
+                                <h2 className="font-space mb-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                                     Your Startup Camp Schedule and <span className="text-gray-200 underline">Daily Flow</span>
                                 </h2>
                             </div>
@@ -287,7 +287,7 @@ export default function Welcome() {
                 <section className="relative flex hidden w-full flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         <p className="font-space text-white opacity-70">Sponsors and Partners</p>
-                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             Meet the Sponsors and Partners Fueling Our
                             <span className="text-gray-200 underline"> Startup Journey</span>
                         </h2>
@@ -316,7 +316,7 @@ export default function Welcome() {
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
                         {/* TITLE */}
                         <p className="font-space text-white opacity-70">Frequently Asked Question</p>
-                        <h2 className="font-space mb-3 max-w-[768px] text-center text-5xl font-bold text-white">
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             The Answers to Your Most <span className="text-gray-200 underline">Common Questions</span>
                         </h2>
 
