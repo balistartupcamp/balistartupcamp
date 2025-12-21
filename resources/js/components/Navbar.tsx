@@ -95,7 +95,7 @@ export default function Navbar() {
                             onClick={handleMenuToggle}
                             className="flex cursor-pointer flex-row items-center justify-center gap-2 rounded-md bg-gray-100/5 px-5 py-3 backdrop-blur-xs transition-colors hover:bg-gray-100/10 sm:gap-3 sm:rounded-lg md:rounded-xl"
                         >
-                            <p className="font-space text-sm text-white sm:text-base md:text-lg">Navigation</p>
+                            <p className="font-space custom-text text-sm text-white sm:text-base md:text-lg">Navigation</p>
                             <div className="flex flex-col items-center justify-center gap-[6px] sm:gap-2">
                                 <span className="h-[2px] w-5 rounded-full bg-gray-100 sm:w-6 md:w-7"></span>
                                 <span className="h-[2px] w-3 rounded-full bg-gray-100 sm:w-4 md:w-5"></span>

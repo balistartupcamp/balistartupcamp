@@ -50,7 +50,7 @@ export default function Welcome() {
                     </div>
                     {/* BACKGROUND HERO */}
                     {/* CONTENT HERO */}
-                    <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-6 py-14 sm:px-12 sm:py-20 md:px-16 md:py-24">
+                    <div className="max-w-9xl justify-startx relative z-10 flex h-full w-full flex-row items-end px-6 py-14 sm:px-12 sm:py-16 sm:py-20 md:px-16 md:py-10 md:py-24">
                         <div className="flex w-full flex-col items-start justify-between gap-6 sm:gap-7 md:flex-row md:items-end md:gap-8">
                             {/* TITLE HERO */}
                             <div className="flex flex-col items-start justify-start gap-3 sm:gap-4 md:gap-5">
@@ -68,11 +68,11 @@ export default function Welcome() {
                                     </div>
                                     {/* EVENT'S DATE */}
                                 </div>
-                                <h1 className="font-space text-3xl font-bold text-white sm:text-4xl md:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                                <h1 className="font-space text-3xl font-bold text-white sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
                                     Bali Startup <br /> Camp 2025
                                 </h1>
-                                <p className="font-space text-sm text-white opacity-80 sm:text-base md:text-lg">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati corporis odit fugit!
+                                <p className="font-space max-w-xl text-sm text-white opacity-80 sm:text-base md:text-lg">
+                                    Temukan, bangun, dan luncurkan startup impianmu dalam 3 hari penuh inovasi, mentorship & kolaborasi nyata di Bali.
                                 </p>
                             </div>
                             {/* TITLE HERO */}
@@ -94,7 +94,7 @@ export default function Welcome() {
 
                 {/* ABOUT SECTION */}
                 <section className="relative flex flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-2 px-6 py-24 sm:gap-3 sm:px-12 md:gap-4 md:px-16">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-2 px-6 py-10 sm:gap-3 sm:px-12 sm:py-16 md:gap-4 md:px-16 md:py-24">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">About</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             The Beginning of Every <span className="text-gray-200 underline">Great Startup</span> Story
@@ -119,7 +119,7 @@ export default function Welcome() {
 
                 {/* SPEAKERS */}
                 <section className="relative flex w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
                             <div className="flex max-w-[768px] flex-col items-start justify-start gap-4">
@@ -212,7 +212,7 @@ export default function Welcome() {
 
                 {/* MENTOR'S SECTION */}
                 <section className="relative flex w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Our Mentors</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             Meet the Mentors Guiding Your <span className="text-gray-200 underline">Startup Journey</span>
@@ -240,7 +240,7 @@ export default function Welcome() {
 
                 {/* SCHEDULE SECTION */}
                 <section className="relative flex w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         {/* HEAD SECTION */}
                         <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
                             <div className="flex max-w-[678px] flex-col items-start justify-start gap-4">
@@ -285,7 +285,7 @@ export default function Welcome() {
 
                 {/* SPONSOR SECTION */}
                 <section className="relative flex w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Sponsors and Partners</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             Meet the Sponsors and Partners Fueling Our
@@ -313,7 +313,7 @@ export default function Welcome() {
 
                 {/* FAQ SECTION */}
                 <section className="relative flex w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
                         {/* TITLE */}
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Frequently Asked Question</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -341,35 +341,35 @@ export default function Welcome() {
                     <div className="max-w-9xl relative flex w-full flex-col gap-8 px-0 pt-24 sm:px-0 md:px-16">
                         <div className="relative w-full overflow-hidden">
                             {/* BOX IMAGE */}
-                            <div className="moveLeft flex w-full flex-row items-center justify-start gap-4">
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                            <div className="flex w-full flex-row items-center justify-start gap-4">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-1.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-2.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-3.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-4.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-5.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-6.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-7.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-1.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-2.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
+                                <div className="moveLeft aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-3.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                             </div>
@@ -494,10 +494,12 @@ export default function Welcome() {
 
                         {/* COPYRIGHT */}
                         <div className="mt-8 flex w-full flex-col items-center justify-between gap-2 border-t border-dashed border-white/30 pt-8 sm:flex-row md:gap-5">
-                            <p className="font-space max-w-sm text-sm text-white opacity-80 sm:text-base md:text-lg">
+                            <p className="font-space max-w-sm text-center text-sm text-white opacity-80 sm:text-left sm:text-base md:text-lg">
                                 © 2025 BaliStartupCamp. All rights reserved.
                             </p>
-                            <p className="font-space max-w-sm text-sm text-white opacity-80 sm:text-base md:text-lg">Desain oleh Panitia BSC 2025</p>
+                            <p className="font-space mb-6 max-w-sm text-center text-sm text-white opacity-80 sm:mb-0 sm:text-right sm:text-base md:text-lg">
+                                Desain oleh Panitia BSC 2025
+                            </p>
                         </div>
                         {/* COPYRIGHT */}
                     </div>
