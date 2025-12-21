@@ -337,50 +337,50 @@ export default function Welcome() {
                 {/* FAQ SECTION */}
 
                 {/* CALL TO ACTION SECTION */}
-                <section className="relative flex hidden w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl relative flex w-full flex-col gap-8 px-16 pt-24">
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl relative flex w-full flex-col gap-8 px-0 pt-24 sm:px-0 md:px-16">
                         <div className="relative w-full overflow-hidden">
                             {/* BOX IMAGE */}
                             <div className="moveLeft flex w-full flex-row items-center justify-start gap-4">
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-1.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-2.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-3.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-4.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-5.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-6.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-7.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-1.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-2.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
-                                <div className="aspect-video h-80 bg-gray-800">
+                                <div className="aspect-video h-96 bg-gray-800 sm:h-96 md:h-80">
                                     <img src="/assets/images/event-img-3.webp" alt="img" className="h-full w-full object-cover" />
                                 </div>
                             </div>
 
                             {/* TEXT AREA */}
-                            <div className="absolute top-0 left-0 flex h-full w-full flex-row items-center justify-between gap-8 px-8">
-                                <h2 className="font-space relative z-10 w-full max-w-[468px] text-6xl font-semibold text-white">
+                            <div className="absolute top-0 left-0 flex h-full w-full flex-col items-start justify-center gap-2 px-8 py-8 sm:gap-4 md:flex-row md:items-center md:justify-between md:gap-8 md:py-0">
+                                <h2 className="font-space relative z-10 w-full max-w-[468px] text-4xl font-semibold text-white sm:text-5xl md:text-6xl">
                                     Ready to Start Your Founder Journey?
                                 </h2>
-                                <div className="relative z-10 flex max-w-84 flex-col items-end justify-end gap-4">
-                                    <p className="font-space text-right text-lg text-white">
+                                <div className="relative z-10 flex max-w-84 flex-col items-start justify-end gap-4 md:items-end">
+                                    <p className="font-space text-sm text-white sm:text-base md:text-right md:text-lg">
                                         Daftarkan timmu sekarang dan mulai perjalanan membangun startup impianmu bersama BSC 2025
                                     </p>
                                     <Button>Daftar Sekarang</Button>
@@ -388,7 +388,6 @@ export default function Welcome() {
 
                                 {/* OVERLAY */}
                                 <div className="bg-custom-gradient absolute top-0 left-0 h-full w-full"></div>
-                                {/* <div className="absolute top-0 left-0 h-full w-full bg-linear-to-r from-[#070708] to-[#070708]/5"></div> */}
                             </div>
                         </div>
                     </div>
@@ -396,69 +395,96 @@ export default function Welcome() {
                 {/* CALL TO ACTION SECTION */}
 
                 {/* FOOTER */}
-                <footer className="mt-16 flex hidden w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col justify-center">
+                <footer className="mt-16 flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col justify-center px-6 sm:px-12 md:px-16">
                         {/* MAIN FOOTER */}
-                        <div className="flex w-full flex-row items-start justify-between gap-5">
+                        <div className="flex w-full flex-col items-start justify-between gap-5 md:flex-row">
                             {/* ABOUT FOOTER */}
-                            <div className="flex flex-col items-start justify-between gap-24">
+                            <div className="flex flex-col items-start justify-between gap-8 md:gap-24">
                                 <div className="flex flex-col items-start justify-start gap-6">
                                     <a href="/">
-                                        <img src="/assets/images/logo_bnw_full.webp" alt="logo bsc 2025" className="h-15" />
+                                        <img src="/assets/images/logo_bnw_full.webp" alt="logo bsc 2025" className="h-10 sm:h-12 md:h-15" />
                                     </a>
-                                    <p className="font-space max-w-sm text-lg text-white opacity-80">
+                                    <p className="font-space text-sm text-white opacity-80 sm:text-base md:max-w-sm md:text-lg">
                                         Bali Startup Camp 2025 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem!
                                     </p>
                                 </div>
 
                                 <div className="flex flex-col items-start justify-start gap-4">
-                                    <p className="font-space max-w-sm text-lg text-white opacity-80">Temukan kami di</p>
+                                    <p className="font-space max-w-sm text-sm text-white opacity-80 sm:text-base md:text-lg">Temukan kami di</p>
                                     <div className="flex flex-row items-center justify-start gap-3">
                                         <a href="https://instagram.com" className="text-white">
-                                            <InstagramIcon className="h-8 w-8 text-white opacity-60" />
+                                            <InstagramIcon className="h-6 w-6 text-white opacity-60 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                                         </a>
                                         <a href="https://instagram.com" className="text-white">
-                                            <FacebookIcon className="h-8 w-8 text-white opacity-60" />
+                                            <FacebookIcon className="h-6 w-6 text-white opacity-60 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                                         </a>
                                         <a href="https://instagram.com" className="text-white">
-                                            <YoutubeIcon className="h-8 w-8 text-white opacity-60" />
+                                            <YoutubeIcon className="h-6 w-6 text-white opacity-60 sm:h-7 sm:w-7 md:h-8 md:w-8" />
                                         </a>
                                     </div>
                                 </div>
                             </div>
 
                             {/* NAVIGATION FOOTER */}
-                            <div className="mt-19 flex flex-row items-start justify-end gap-32">
+                            <div className="mt-8 flex w-full flex-row items-start justify-start gap-16 md:mt-19 md:w-auto md:justify-end lg:gap-24 xl:gap-32">
                                 <div className="flex flex-col items-start justify-start gap-2">
                                     <p className="font-space text-sm font-medium text-white sm:text-base md:text-lg">Navigasi</p>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Home
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Tentang Kami
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Narasumber & Mentor
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Jadwal Acara
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Sponsor dan Partner
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         FAQ
                                     </a>
                                 </div>
                                 <div className="flex flex-col items-start justify-start gap-2">
                                     <p className="font-space text-sm font-medium text-white sm:text-base md:text-lg">Bantuan</p>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Admin - Abi
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Admin - Ezy
                                     </a>
-                                    <a href="#" className="font-base font-space text-base text-white opacity-70 hover:opacity-100">
+                                    <a
+                                        href="#"
+                                        className="font-base font-space text-xs text-white opacity-70 hover:opacity-100 sm:text-sm md:text-base"
+                                    >
                                         Admin - Wira
                                     </a>
                                 </div>
@@ -467,9 +493,11 @@ export default function Welcome() {
                         {/* MAIN FOOTER */}
 
                         {/* COPYRIGHT */}
-                        <div className="mt-8 flex w-full flex-row items-center justify-between gap-5 border-t border-dashed border-white/30 pt-8">
-                            <p className="font-space max-w-sm text-lg text-white opacity-80">© 2025 BaliStartupCamp. All rights reserved.</p>
-                            <p className="font-space max-w-sm text-lg text-white opacity-80">Desain oleh Panitia BSC 2025</p>
+                        <div className="mt-8 flex w-full flex-col items-center justify-between gap-2 border-t border-dashed border-white/30 pt-8 sm:flex-row md:gap-5">
+                            <p className="font-space max-w-sm text-sm text-white opacity-80 sm:text-base md:text-lg">
+                                © 2025 BaliStartupCamp. All rights reserved.
+                            </p>
+                            <p className="font-space max-w-sm text-sm text-white opacity-80 sm:text-base md:text-lg">Desain oleh Panitia BSC 2025</p>
                         </div>
                         {/* COPYRIGHT */}
                     </div>

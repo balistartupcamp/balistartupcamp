@@ -63,6 +63,18 @@
     body {
         font-size: 3px;
     }
+    .bg-custom-gradient {
+        background: linear-gradient(
+            to right,
+            #070708 0%,
+            #070708 7%,
+            rgba(7, 7, 8, 1) 10%,
+            rgba(7, 7, 8, 0.65) 50%,
+            rgba(7, 7, 8, 0.65) 50%,
+            rgba(7, 7, 8, 1) 93%,
+            #070708 100%
+        );
+    }
 }
 
 .max-w-9xl {
