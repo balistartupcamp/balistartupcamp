@@ -239,12 +239,12 @@ export default function Welcome() {
                 {/* MENTOR'S SECTION */}
 
                 {/* SCHEDULE SECTION */}
-                <section className="relative flex hidden w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
                         {/* HEAD SECTION */}
-                        <div className="flex w-full flex-row items-end justify-between gap-6">
+                        <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
                             <div className="flex max-w-[678px] flex-col items-start justify-start gap-4">
-                                <p className="font-space text-white opacity-70">Event's Schedule</p>
+                                <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Event's Schedule</p>
                                 <h2 className="font-space mb-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                                     Your Startup Camp Schedule and <span className="text-gray-200 underline">Daily Flow</span>
                                 </h2>
