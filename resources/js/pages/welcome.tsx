@@ -96,7 +96,7 @@ export default function Welcome() {
                 <section className="relative flex flex-col items-center justify-center">
                     <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-2 px-6 py-24 sm:gap-3 sm:px-12 md:gap-4 md:px-16">
                         <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">About</p>
-                        <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white lg:text-4xl xl:text-5xl">
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             The Beginning of Every <span className="text-gray-200 underline">Great Startup</span> Story
                         </h2>
                         <p className="font-space max-w-[768px] text-center text-sm text-white opacity-80 sm:text-base md:text-lg">
@@ -105,7 +105,11 @@ export default function Welcome() {
                         </p>
 
                         {/* VIDEO */}
-                        <div className="mt-4 flex aspect-[21/11] w-full max-w-4xl items-center justify-center overflow-hidden rounded-sm bg-white sm:mt-6 sm:rounded-md md:mt-8 md:rounded-lg"></div>
+                        <div className="mt-4 flex aspect-[21/11] w-full max-w-4xl items-center justify-center overflow-hidden rounded-sm bg-white sm:mt-6 sm:rounded-md md:mt-8 md:rounded-lg">
+                            <video className="w-full" autoPlay muted loop>
+                                <source src="/assets/videos/rewind_video_2025.mp4" />
+                            </video>
+                        </div>
                         <p className="font-space mt-3 text-center text-xs text-white italic opacity-40 sm:text-sm md:text-base">
                             Video berdasarkan event Bali Startup Camp sebelumnya
                         </p>
