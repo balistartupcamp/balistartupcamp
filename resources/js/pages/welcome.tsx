@@ -312,10 +312,10 @@ export default function Welcome() {
                 {/* SPONSOR SECTION */}
 
                 {/* FAQ SECTION */}
-                <section className="relative flex hidden w-full flex-col items-center justify-center">
-                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-16 py-24">
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-24 sm:px-12 md:px-16">
                         {/* TITLE */}
-                        <p className="font-space text-white opacity-70">Frequently Asked Question</p>
+                        <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Frequently Asked Question</p>
                         <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
                             The Answers to Your Most <span className="text-gray-200 underline">Common Questions</span>
                         </h2>
@@ -323,39 +323,12 @@ export default function Welcome() {
                         {/* TITLE */}
                         <Accordion type="single" collapsible className="w-full max-w-xl">
                             <AccordionItem value="item-1">
-                                <AccordionTrigger className="text-2xl text-white">Apakah peserta harus sudah memiliki tim?</AccordionTrigger>
-                                <AccordionContent className="text-xl text-white">
+                                <AccordionTrigger className="text-lg text-white sm:text-xl md:text-2xl">
+                                    Apakah peserta harus sudah memiliki tim?
+                                </AccordionTrigger>
+                                <AccordionContent className="text-sm text-white sm:text-lg md:text-xl">
                                     Ya. Peserta wajib mendaftar dalam bentuk tim karena seluruh proses akan berfokus pada pengembangan ide secara
                                     kolaboratif.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-2">
-                                <AccordionTrigger className="text-2xl text-white">Apakah peserta harus sudah memiliki ide startup?</AccordionTrigger>
-                                <AccordionContent className="text-xl text-white">
-                                    Ya. Setiap tim harus datang dengan ide awal, yang kemudian akan dibimbing untuk diperdalam, divalidasi, dan
-                                    dimatangkan selama acara.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-3">
-                                <AccordionTrigger className="text-2xl text-white">Apa saja yang perlu dibawa oleh peserta?</AccordionTrigger>
-                                <AccordionContent className="text-xl text-white">
-                                    Laptop, charger, kebutuhan pribadi, serta bahan pendukung ide startup jika ada.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-4">
-                                <AccordionTrigger className="text-2xl text-white">Apakah akan ada sesi mentoring selama acara?</AccordionTrigger>
-                                <AccordionContent className="text-xl text-white">
-                                    Ya. Mentor berpengalaman akan membantu tim dalam proses validasi, strategi produk, dan persiapan pitching final.
-                                </AccordionContent>
-                            </AccordionItem>
-
-                            <AccordionItem value="item-5">
-                                <AccordionTrigger className="text-2xl text-white">Apakah acara ini berbayar?</AccordionTrigger>
-                                <AccordionContent className="text-xl text-white">
-                                    Informasi biaya pendaftaran tersedia pada halaman registrasi dan mencakup seluruh fasilitas acara.
                                 </AccordionContent>
                             </AccordionItem>
                         </Accordion>
