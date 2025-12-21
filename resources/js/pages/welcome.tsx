@@ -279,18 +279,36 @@ export default function Welcome() {
                         </div>
                         {/* SCHEDULE TABLE */}
                         {RundownDatas.map((rundowndData, key) => (
-                            <ScheduleTable key={key}>
-                                <ScheduleTableHead>{rundowndData.title} Schedule</ScheduleTableHead>
-                                {rundowndData.data.map((data, index) => (
-                                    <ScheduleTableItem
-                                        key={index}
-                                        time={data.time}
-                                        total={data.duration}
-                                        title={data.activity}
-                                        description={data.description}
-                                    />
-                                ))}
-                            </ScheduleTable>
+                            <Accordion
+                                type="single"
+                                collapsible
+                                className="w-full"
+                                defaultValue={key === 0 ? `rundown-item-${key}` : undefined}
+                                key={key}
+                            >
+                                <AccordionItem value={`rundown-item-${key}`}>
+                                    <ScheduleTable key={key}>
+                                        <ScheduleTableHead>
+                                            <AccordionTrigger className="py-0 text-sm sm:text-base md:text-lg">
+                                                {rundowndData.title} Schedule
+                                            </AccordionTrigger>
+                                        </ScheduleTableHead>
+                                        <AccordionContent>
+                                            <div className="flex w-full flex-col gap-2">
+                                                {rundowndData.data.map((data, index) => (
+                                                    <ScheduleTableItem
+                                                        key={index}
+                                                        time={data.time}
+                                                        total={data.duration}
+                                                        title={data.activity}
+                                                        description={data.description}
+                                                    />
+                                                ))}
+                                            </div>
+                                        </AccordionContent>
+                                    </ScheduleTable>
+                                </AccordionItem>
+                            </Accordion>
                         ))}
                     </div>
                 </section>
