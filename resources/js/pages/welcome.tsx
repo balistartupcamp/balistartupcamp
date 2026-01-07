@@ -277,7 +277,7 @@ export default function Welcome() {
                             </div>
                             <Button>Daftar Sekarang</Button>
                         </div>
-                        {/* SCHEDULE TABLE */}
+                        {/* SCHEDULE TABLEs */}
                         {RundownDatas.map((rundowndData, key) => (
                             <Accordion
                                 type="single"
