@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bsc-app
+    restart: unless-stopped
+    ports:
+      - '8888:80'
+    env_file:
+      - .env
+    environment:
+      - AUTO_MIGRATE=true
+    volumes:
+      # Mount storage untuk persistent data
+      - ./storage/app:/var/www/storage/app
+      # Mount .env file untuk development
+      - ./.env:/var/www/.env:ro
+    networks:
+      - bsc-network
+
+networks:
+  bsc-network:
+    driver: bridge
