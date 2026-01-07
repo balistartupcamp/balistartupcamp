@@ -108,7 +108,7 @@ export default function Welcome() {
                                 <Button>Daftar Sekarang</Button>
                                 <div className="hidden flex-row items-center justify-start gap-3 md:flex">
                                     <img src="/assets/images/hero-person.webp" alt="hero person image bsc 2025" className="h-10" />
-                                    <p className="font-space text-sm text-white opacity-80 sm:text-base md:text-lg">Untuk 4 - 5 orang per tim</p>
+                                    <p className="font-space text-sm text-white opacity-80 sm:text-base md:text-lg">Untuk 5 orang per tim</p>
                                 </div>
                             </div>
                             {/* ACTION HERO */}
