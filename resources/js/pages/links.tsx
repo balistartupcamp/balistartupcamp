@@ -73,7 +73,11 @@ export default function LinksPage() {
 
                     {/* Instagram Icon */}
                     <div className="flex justify-center">
-                        <a href="#" className="text-gray-400 transition-colors hover:text-white" aria-label="Instagram">
+                        <a
+                            href="https://www.instagram.com/bali.startup/"
+                            className="text-gray-400 transition-colors hover:text-white"
+                            aria-label="Instagram"
+                        >
                             <Instagram size={24} />
                         </a>
                     </div>
