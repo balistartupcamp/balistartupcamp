@@ -100,7 +100,7 @@ export default function LinksPage() {
                                             : 'border border-slate-700/30 bg-slate-800/50 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-700/60'
                                     }`}
                                 >
-                                    {/* Icon */}
+                                    {/* Icons */}
                                     <IconComponent
                                         size={24}
                                         className={`flex-shrink-0 transition-colors ${
