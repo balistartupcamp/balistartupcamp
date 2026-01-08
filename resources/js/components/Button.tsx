@@ -2,8 +2,11 @@ import { ButtonProps } from '@/types';
 import { PlayIcon } from '@heroicons/react/24/outline';
 
 export default function Button({ children }: ButtonProps) {
+    const handlerNavigate = () => {
+        document.location.href = '/links';
+    };
     return (
-        <button className="group relative flex cursor-pointer flex-row items-center justify-center gap-1">
+        <button onClick={handlerNavigate} className="group relative flex cursor-pointer flex-row items-center justify-center gap-1">
             <div className="relative z-10 flex aspect-square h-11 items-center justify-center rounded-md bg-[#224efe] text-white transition duration-300 group-hover:bg-[#fff] group-hover:text-[#224efe] group-hover:shadow-2xl sm:h-12 sm:rounded-lg md:h-14 md:rounded-xl">
                 <PlayIcon className="h-5 transition duration-300 group-hover:rotate-y-[360deg] sm:h-6 md:h-7" />
             </div>
