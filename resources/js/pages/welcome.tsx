@@ -95,7 +95,7 @@ export default function Welcome() {
                                     {/* EVENT'S DATE */}
                                 </div>
                                 <h1 className="font-space text-3xl font-bold text-white sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-                                    Bali Startup <br /> Camp 2025
+                                    Bali Startup <br /> Camp 2026
                                 </h1>
                                 <p className="font-space max-w-xl text-sm text-white opacity-80 sm:text-base md:text-lg">
                                     Temukan, bangun, dan luncurkan startup impianmu dalam 3 hari penuh inovasi, mentorship & kolaborasi nyata di Bali.
