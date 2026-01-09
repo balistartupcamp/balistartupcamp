@@ -90,12 +90,12 @@ export default function Welcome() {
                                     {/* EVENT'S DATE */}
                                     <div className="font-space flex flex-row items-center justify-start gap-1 text-xs font-medium text-white sm:gap-3 sm:text-base md:text-lg">
                                         <CalendarIcon className="h-4 sm:h-5 md:h-6" />
-                                        23 - 25 January 2025
+                                        23 - 25 January 2026
                                     </div>
                                     {/* EVENT'S DATE */}
                                 </div>
                                 <h1 className="font-space text-3xl font-bold text-white sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl">
-                                    Bali Startup <br /> Camp 2026
+                                    Bali Startup <br /> Camp 2025
                                 </h1>
                                 <p className="font-space max-w-xl text-sm text-white opacity-80 sm:text-base md:text-lg">
                                     Temukan, bangun, dan luncurkan startup impianmu dalam 3 hari penuh inovasi, mentorship & kolaborasi nyata di Bali.
