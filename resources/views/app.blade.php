@@ -11,6 +11,17 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Bali Startup Camp 2025" />
+    <meta property="og:description" content="Annual startup event by Primakara University" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://balistartupcamp.com" />
+    <meta property="og:image" content="https://balistartupcamp.com/assets/images/bsc-2025-cover.png" />
+
+    <!-- Twitter Card (opsional tapi disarankan) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://balistartupcamp.com/assets/images/bsc-2025-cover.png" />
+
     {{-- GOOGLE FONT --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
