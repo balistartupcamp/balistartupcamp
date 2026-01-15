@@ -7,6 +7,9 @@ import ScheduleTableItem from '@/components/schedule/ScheduleTableItem';
 import SponsorItem from '@/components/SponsorItem';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import FAQDatas from '@/datas/faq.json';
+import JuriDatas from '@/datas/juris.json';
+import MentorDatas from '@/datas/mentors.json';
+import NarasumberDatas from '@/datas/narasumbers.json';
 import RundownDatas from '@/datas/rundown.json';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
@@ -158,9 +161,15 @@ export default function Welcome() {
                         </div>
                         {/* MENTOR LIST */}
                         <div className="smgrid-cols-2 mt-6 grid w-full grid-cols-1 flex-wrap items-stretch justify-start gap-4 overflow-hidden md:grid-cols-3">
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
+                            {NarasumberDatas.map((narasumber, index) => (
+                                <MentorCard
+                                    key={index}
+                                    name={narasumber.name}
+                                    image={narasumber.image}
+                                    startup={narasumber.startup}
+                                    link={narasumber.link}
+                                />
+                            ))}
                         </div>
                     </div>
                 </section>
@@ -249,20 +258,35 @@ export default function Welcome() {
 
                         {/* MENTOR LIST */}
                         <div className="mt-6 grid w-full grid-cols-1 flex-wrap items-stretch justify-start gap-4 overflow-hidden sm:grid-cols-2 md:grid-cols-3">
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
-                            <MentorCard />
+                            {MentorDatas.map((mentor, index) => (
+                                <MentorCard key={index} name={mentor.name} image={mentor.image} startup={mentor.startup} link={mentor.link} />
+                            ))}
                         </div>
                     </div>
                 </section>
                 {/* MENTOR'S SECTION */}
+
+                {/* JUDGES */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
+                        {/* HEAD SECTION */}
+                        <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+                            <div className="flex max-w-[768px] flex-col items-start justify-start gap-4">
+                                <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">The Judges</p>
+                                <h2 className="font-space mb-3 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+                                    Trusted Judges Bringing <span className="text-gray-200 underline">Industry Perspective</span>
+                                </h2>
+                            </div>
+                            <Button>Daftar Sekarang</Button>
+                        </div>
+                        {/* MENTOR LIST */}
+                        <div className="smgrid-cols-2 mt-6 grid w-full grid-cols-1 flex-wrap items-stretch justify-start gap-4 overflow-hidden md:grid-cols-3">
+                            {JuriDatas.map((juri, index) => (
+                                <MentorCard key={index} name={juri.name} image={juri.image} startup={juri.startup} link={juri.link} />
+                            ))}
+                        </div>
+                    </div>
+                </section>
 
                 {/* SCHEDULE SECTION */}
                 <section ref={scheduleSection} className="relative flex w-full flex-col items-center justify-center">
