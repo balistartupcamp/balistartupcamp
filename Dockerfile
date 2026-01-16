@@ -1,11 +1,5 @@
 FROM php:8.3-apache
 
-COPY ./docker/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
-
-# Tell Docker to run this script first
-ENTRYPOINT ["entrypoint.sh"]
-
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -57,8 +51,6 @@ RUN rm -r /var/www/*
 
 # install laravel
 ADD . /var/www/
-
-# --- THE FIX STARTS HERE ---
 
 # 1. Increase memory limits for build tools
 ENV COMPOSER_MEMORY_LIMIT=-1
