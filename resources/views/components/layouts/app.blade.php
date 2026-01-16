@@ -8,7 +8,7 @@
     <title>{{ $title ?? 'Absensi' }}</title>
 
     @livewireStyles
-    @filamentStyles @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @filamentStyles @vite(['resources/css/app.css', 'resources/js/app.tsx'])
 </head>
 
 <body>
