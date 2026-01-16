@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     jpegoptim optipng pngquant gifsicle \
     ca-certificates \
     libgmp-dev \
+    libicu-dev \
     vim \
     tmux \
     unzip \
@@ -22,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Install extensions
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl gmp
+RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl gmp intl
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/
 RUN docker-php-ext-install gd
 RUN pecl install -o -f redis &&  rm -rf /tmp/pear && docker-php-ext-enable redis
