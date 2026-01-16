@@ -51,11 +51,15 @@ RUN rm -r /var/www/*
 
 # install laravel
 ADD . /var/www/
+# 1. Set temporary permissions for the build process
+RUN chmod -R 777 /var/www/storage /var/www/bootstrap/cache
 
-# Copy directory project permission ke container
-RUN chown -R www-data:www-data /var/www
+# 2. Split the commands to isolate errors (Better for GitHub Actions logs)
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+RUN npm install
+RUN npm run build
 
-# install deps
-RUN composer install && npm install && npm run build
+# 3. Finalize production permissions for Apache
+RUN chown -R www-data:www-data /var/www && chmod -R 755 /var/www/storage
 
 RUN a2enmod rewrite
