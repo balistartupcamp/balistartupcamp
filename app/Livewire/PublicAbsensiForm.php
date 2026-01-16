@@ -89,23 +89,28 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                             ->required(),
 
                         FileUpload::make('bukti_foto')
-                            ->label('Bukti Foto')
-                            ->image()
+                            ->label('Foto Bukti')
                             ->directory('attendance/foto')
+                            ->disk('public') // Change this from 'private' to 'public'
+                            ->image()
+                            ->visibility('public') // Ensures the file is readable by the web server
                             ->required(),
 
                         SignaturePad::make('ttd')
                             ->label('Tanda Tangan Digital')
                             ->required()
                             ->extraAttributes([
-                                'style' => 'min-height: 800px; width: 100%;' // Force height and width via CSS
+                                'style' => 'aspect-ratio: 16/9; width: 100%;',
+                                'class' => 'border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg',
                             ])
-                            ->backgroundColor('rgba(0,0,0,0)')  // Background color on light mode
-                            ->backgroundColorOnDark('rgba(0,0,0,0)')     // Background color on dark mode (defaults to backgroundColor)
-                            ->exportBackgroundColor('#f00')     // Background color on export (defaults to backgroundColor)
-                            ->penColor('#000')                  // Pen color on light mode
-                            ->penColorOnDark('#000')            // Pen color on dark mode (defaults to penColor)
-                            ->exportPenColor('#0f0')
+                            ->maxWidth(10)
+                            ->backgroundColor('rgba(0,0,0,0)')
+                            ->backgroundColorOnDark('rgba(0,0,0,0)')
+                            ->penColor('#3b82f6')
+                            ->penColorOnDark('#000000')
+                            ->exportBackgroundColor('#ffffff')
+                            ->exportPenColor('#000000'),
+
                          ])
             ])
             ->statePath('data')
