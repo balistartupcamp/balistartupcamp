@@ -1,10 +1,17 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-
 @custom-variant dark (&:is(.dark *));
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../../../vendor/saade/filament-autograph/resources/views/**/*.blade.php';
+@import "../../vendor/filament/filament/resources/css/theme.css";
+
+/* 2. Tell Tailwind v4 to scan your directories for classes */
+@source "../../app/Livewire";
+@source "../../resources/views";
+/* Add this to scan Filament's own components for styling */
+@source "../../vendor/filament/**/*.blade.php";
 
 @theme {
     --font-sans:
@@ -26,22 +33,21 @@
     0% {
         transform: translateX(0%);
     }
+
     100% {
         transform: translateX(-700%);
     }
 }
 
 .bg-custom-gradient {
-    background: linear-gradient(
-        to right,
-        #070708 0%,
-        #070708 7%,
-        rgba(7, 7, 8, 1) 10%,
-        rgba(7, 7, 8, 0.15) 50%,
-        rgba(7, 7, 8, 0.15) 50%,
-        rgba(7, 7, 8, 1) 93%,
-        #070708 100%
-    );
+    background: linear-gradient(to right,
+            #070708 0%,
+            #070708 7%,
+            rgba(7, 7, 8, 1) 10%,
+            rgba(7, 7, 8, 0.15) 50%,
+            rgba(7, 7, 8, 0.15) 50%,
+            rgba(7, 7, 8, 1) 93%,
+            #070708 100%);
 }
 
 @media screen and (max-width: 1440px) {
@@ -54,6 +60,7 @@
     body {
         font-size: 14px;
     }
+
     .moveLeft {
         animation-name: moveLeft;
         animation-duration: 70s;
@@ -66,18 +73,18 @@
     body {
         font-size: 3px;
     }
+
     .bg-custom-gradient {
-        background: linear-gradient(
-            to right,
-            #070708 0%,
-            #070708 7%,
-            rgba(7, 7, 8, 1) 10%,
-            rgba(7, 7, 8, 0.65) 50%,
-            rgba(7, 7, 8, 0.65) 50%,
-            rgba(7, 7, 8, 1) 93%,
-            #070708 100%
-        );
+        background: linear-gradient(to right,
+                #070708 0%,
+                #070708 7%,
+                rgba(7, 7, 8, 1) 10%,
+                rgba(7, 7, 8, 0.65) 50%,
+                rgba(7, 7, 8, 0.65) 50%,
+                rgba(7, 7, 8, 1) 93%,
+                #070708 100%);
     }
+
     .moveLeft {
         animation-name: moveLeft;
         animation-duration: 100s;
@@ -207,6 +214,7 @@
     * {
         @apply border-border outline-ring/50;
     }
+
     body {
         @apply bg-background text-foreground;
     }
