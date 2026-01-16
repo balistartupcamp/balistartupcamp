@@ -67,7 +67,14 @@ RUN npm run build
 # 4. Fix permissions ONLY after the build is complete
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+# 5. Copy the entrypoint script into the image
+COPY ./docker/entrypoint.sh /usr/local/bin/entrypoint.sh
 
+# 6. Grant execution permissions to the script
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# 7. Set the script as the entrypoint
+ENTRYPOINT ["entrypoint.sh"]
 # --- THE FIX ENDS HERE ---
 
 RUN a2enmod rewrite
