@@ -51,15 +51,25 @@ RUN rm -r /var/www/*
 
 # install laravel
 ADD . /var/www/
-# 1. Set temporary permissions for the build process
-RUN chmod -R 777 /var/www/storage /var/www/bootstrap/cache
 
-# 2. Split the commands to isolate errors (Better for GitHub Actions logs)
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+# --- THE FIX STARTS HERE ---
+
+# 1. Increase memory limits for build tools
+ENV COMPOSER_MEMORY_LIMIT=-1
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
+# 2. Run Composer first as root to avoid permission denied on cache
+# We ignore platform reqs to ensure local lock files don't break the build environment
+RUN composer install --ignore-platform-reqs --no-interaction --prefer-dist --optimize-autoloader
+
+# 3. Run NPM steps separately to isolate build errors
 RUN npm install
 RUN npm run build
 
-# 3. Finalize production permissions for Apache
-RUN chown -R www-data:www-data /var/www && chmod -R 755 /var/www/storage
+# 4. Fix permissions ONLY after the build is complete
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+
+# --- THE FIX ENDS HERE ---
 
 RUN a2enmod rewrite
