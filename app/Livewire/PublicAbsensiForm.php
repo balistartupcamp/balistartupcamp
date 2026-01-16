@@ -14,6 +14,7 @@ use Filament\Schemas\Concerns\InteractsWithSchemas; // Correct for v4
 use Filament\Schemas\Contracts\HasSchemas;         // Correct for v4
 use Filament\Schemas\Schema;                      // Changed from Form
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Illuminate\Contracts\View\View;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
 
@@ -21,6 +22,7 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
 {
     use InteractsWithSchemas;
     use InteractsWithActions;
+    use WithFileUploads;
 
     public ?array $data = [];
     public Absensi $absensi;
@@ -91,9 +93,12 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                         FileUpload::make('bukti_foto')
                             ->label('Foto Bukti')
                             ->directory('attendance/foto')
-                            ->disk('public') // Change this from 'private' to 'public'
+                            ->disk('public')
                             ->image()
-                            ->visibility('public') // Ensures the file is readable by the web server
+                            ->imageEditor()
+                            ->maxSize(5120)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg'])
+                            ->visibility('public')
                             ->required(),
 
                         SignaturePad::make('ttd')
