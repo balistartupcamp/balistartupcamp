@@ -11,6 +11,7 @@ import JuriDatas from '@/datas/juris.json';
 import MentorDatas from '@/datas/mentors.json';
 import NarasumberDatas from '@/datas/narasumbers.json';
 import RundownDatas from '@/datas/rundown.json';
+import SponsorDatas from '@/datas/sponsors.json';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
 import { ReactLenis } from 'lenis/react';
@@ -352,15 +353,9 @@ export default function Welcome() {
 
                         {/* SPONSOR LIST */}
                         <div className="mt-4 grid w-full grid-cols-2 flex-row flex-wrap items-start justify-start gap-2 sm:gap-3 md:grid-cols-3 md:gap-4">
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
-                            <SponsorItem />
+                            {SponsorDatas.map((sponsor, index) => (
+                                <SponsorItem key={index} imageLink={sponsor.imageLink} altText={sponsor.altText} />
+                            ))}
                         </div>
                     </div>
                 </section>
