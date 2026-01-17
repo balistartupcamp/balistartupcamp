@@ -317,7 +317,7 @@ export default function Welcome() {
                                                 {rundowndData.title} Schedule
                                             </AccordionTrigger>
                                         </ScheduleTableHead>
-                                        <AccordionContent>
+                                        <AccordionContent className="w-full">
                                             <div className="flex w-full flex-col gap-2">
                                                 {rundowndData.data.map((data, index) => (
                                                     <ScheduleTableItem
