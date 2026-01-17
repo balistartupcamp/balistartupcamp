@@ -86,25 +86,25 @@ export default function Navbar({ scrollToSection }: { scrollToSection: (sectionI
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 z-50 flex w-full items-center justify-center transition-all duration-500 ${
+                className={`fixed left-0 top-0 z-50 flex w-full items-center justify-center transition-all duration-500 ${
                     hidden ? '-translate-y-[120%]' : 'translate-y-0'
                 }`}
             >
                 <div className="max-w-9xl w-full rounded-3xl px-6 py-5 sm:px-7 md:px-9">
-                    <div className="flex flex-row items-center justify-between gap-4 rounded-md bg-gray-100/5 px-4 py-3 backdrop-blur-xs sm:rounded-lg sm:px-6 sm:py-4 md:rounded-xl">
+                    <div className="backdrop-blur-xs flex flex-row items-center justify-between gap-4 rounded-md bg-gray-100/5 px-4 py-3 sm:rounded-lg sm:px-6 sm:py-4 md:rounded-xl">
                         <a href="/">
                             <img src="/assets/images/logo_bnw_full.webp" alt="logo bsc 2025" className="h-9 sm:h-10 md:h-11" />
                         </a>
 
                         <button
                             onClick={handleMenuToggle}
-                            className="flex cursor-pointer flex-row items-center justify-center gap-2 rounded-md bg-gray-100/5 px-5 py-3 backdrop-blur-xs transition-colors hover:bg-gray-100/10 sm:gap-3 sm:rounded-lg md:rounded-xl"
+                            className="backdrop-blur-xs flex cursor-pointer flex-row items-center justify-center gap-2 rounded-md bg-gray-100/5 px-5 py-3 transition-colors hover:bg-gray-100/10 sm:gap-3 sm:rounded-lg md:rounded-xl"
                         >
                             <p className="font-space custom-text text-sm text-white sm:text-base md:text-lg">Navigation</p>
                             <div className="flex flex-col items-center justify-center gap-[6px] sm:gap-2">
-                                <span className="h-[2px] w-5 rounded-full bg-gray-100 sm:w-6 md:w-7"></span>
-                                <span className="h-[2px] w-3 rounded-full bg-gray-100 sm:w-4 md:w-5"></span>
-                                <span className="h-[2px] w-5 rounded-full bg-gray-100 sm:w-6 md:w-7"></span>
+                                <span className="h-[2px] w-5 rounded-full bg-white sm:w-6 md:w-7"></span>
+                                <span className="h-[2px] w-3 rounded-full bg-white sm:w-4 md:w-5"></span>
+                                <span className="h-[2px] w-5 rounded-full bg-white sm:w-6 md:w-7"></span>
                             </div>
                         </button>
                     </div>
@@ -114,7 +114,7 @@ export default function Navbar({ scrollToSection }: { scrollToSection: (sectionI
             {/* MENU OVERLAY */}
             <div
                 ref={menuRef}
-                className="fixed top-0 right-0 z-40 hidden h-full w-full items-center justify-start gap-20 bg-black/70 backdrop-blur-md"
+                className="fixed right-0 top-0 z-40 hidden h-full w-full items-center justify-start gap-20 bg-black/70 backdrop-blur-md"
                 style={{ display: menuOpen ? 'flex' : 'none', opacity: 0 }}
             >
                 {/* IMAGE AREA  */}
@@ -123,7 +123,7 @@ export default function Navbar({ scrollToSection }: { scrollToSection: (sectionI
                 </div>
 
                 {/* NAVIGATION LIST */}
-                <div ref={menuLinksRef} className="flex w-full flex-col items-start justify-start gap-15 px-8 md:ps-0 md:pe-20">
+                <div ref={menuLinksRef} className="gap-15 flex w-full flex-col items-start justify-start px-8 md:pe-20 md:ps-0">
                     <button
                         onClick={() => hanlderNavigate('about')}
                         className="font-space alink text-3xl font-medium text-white sm:text-4xl md:text-5xl"
@@ -180,7 +180,7 @@ export default function Navbar({ scrollToSection }: { scrollToSection: (sectionI
                 {/* TRIGGER CLOSE */}
                 <button
                     onClick={handleMenuToggle}
-                    className="absolute top-8 right-12 cursor-pointer text-3xl text-white transition-colors hover:text-gray-300 sm:text-4xl md:text-5xl"
+                    className="absolute right-12 top-8 cursor-pointer text-3xl text-white transition-colors hover:text-gray-300 sm:text-4xl md:text-5xl"
                 >
                     X
                 </button>
