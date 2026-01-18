@@ -16,7 +16,6 @@ use Filament\Schemas\Schema;                      // Changed from Form
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
-
 class PublicAbsensiForm extends Component implements HasSchemas, HasActions
 {
     use InteractsWithSchemas;
@@ -44,7 +43,10 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
         // Change ->schema() to ->components()
         return $schema
             ->components([
+                \Filament\Schemas\Components\View::make('forms.absensi-header'),
+
                 Section::make($this->absensi->title)
+                    ->extraAttributes(['style' => 'font-size: 24px;'])
                     ->description('Silakan isi data kehadiran Anda.')
                     ->schema([ // Layout components inside a Section still use ->schema()
                         TextInput::make('nama_lengkap')
