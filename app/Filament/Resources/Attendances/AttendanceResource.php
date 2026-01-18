@@ -16,6 +16,7 @@ use Filament\Actions\EditAction;
 use Filament\Actions\ExportAction;
 use Filament\Actions\ImportAction;
 use Filament\Actions\ViewAction;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Infolists\Components\ImageEntry;
@@ -58,6 +59,14 @@ class AttendanceResource extends Resource
                 TextInput::make('nomor_telepon')
                     ->tel()
                     ->required(),
+                Select::make('status')
+                    ->label('Status')
+                    ->options([
+                        'Hadir' => 'Hadir',
+                        'Izin' => 'Izin',
+                        'Sakit' => 'Sakit',
+                    ])
+                    ->native(false),
                 Textarea::make('ttd')
                     ->required()
                     ->columnSpanFull(),
@@ -78,6 +87,7 @@ class AttendanceResource extends Resource
                 TextEntry::make('program_studi'),
                 TextEntry::make('nama_startup'),
                 TextEntry::make('nomor_telepon'),
+                TextEntry::make('status'),
                 ImageEntry::make('ttd')
                     ->columnSpanFull()
                     ->extraAttributes(['class' => 'w-full overflow-hidden flex justify-center items-center']),
@@ -102,6 +112,8 @@ class AttendanceResource extends Resource
                 TextColumn::make('absensi.title')
                 ->label('Sesi')
                 ->searchable(),
+                TextColumn::make('status')
+                    ->searchable(),
                 TextColumn::make('nama_lengkap')
                     ->searchable(),
                 TextColumn::make('nim')
@@ -146,6 +158,7 @@ class AttendanceResource extends Resource
 
         $table->addRow();
         $table->addCell(1000)->addText('Sesi', ['bold' => true]);
+        $table->addCell(1000)->addText('Status', ['bold' => true]);
         $table->addCell(1500)->addText('Nama Lengkap', ['bold' => true]);
         $table->addCell(1500)->addText('NIM', ['bold' => true]);
         $table->addCell(2000)->addText('Prodi', ['bold' => true]);
@@ -159,6 +172,7 @@ class AttendanceResource extends Resource
             $table->addRow(1000);
 
             $table->addCell(2000)->addText($record->absensi->title ?? 'N/A');
+            $table->addCell(1000)->addText($record->status);
             $table->addCell(3000)->addText($record->nama_lengkap);
             $table->addCell(1500)->addText($record->nim);
             $table->addCell(2000)->addText($record->program_studi);

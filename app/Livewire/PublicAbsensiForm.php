@@ -82,15 +82,26 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                                 ->native(false),
                         ]),
 
-                        TextInput::make('nama_startup')
-                            ->label('Nama Startup')
-                            ->required(),
+                        Grid::make(2)->schema([
+                            TextInput::make('nomor_telepon')
+                                ->label('Nomor Telepon')
+                                ->tel()
+                                ->numeric()
+                                ->required(),
+                            Select::make('status')
+                                ->label('Status')
+                                ->options([
+                                    'Hadir' => 'Hadir',
+                                    'Izin' => 'Izin',
+                                    'Sakit' => 'Sakit',
+                                ])
+                                ->required()
+                                ->native(false)
+                        ]),
 
-                        TextInput::make('nomor_telepon')
-                            ->label('Nomor Telepon')
-                            ->tel()
-                            ->numeric()
-                            ->required(),
+                        TextInput::make('nama_startup')
+                                ->label('Nama Startup')
+                                ->required(),
 
                         FileUpload::make('bukti_foto')
                             ->label('Foto Bukti')
