@@ -8,6 +8,7 @@ import SponsorItem from '@/components/SponsorItem';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import FAQDatas from '@/datas/faq.json';
 import JuriDatas from '@/datas/juris.json';
+import MediaPartnerDatas from '@/datas/media_partner.json';
 import MentorDatas from '@/datas/mentors.json';
 import NarasumberDatas from '@/datas/narasumbers.json';
 import RundownDatas from '@/datas/rundown.json';
@@ -356,6 +357,22 @@ export default function Welcome() {
                             {SponsorDatas.map((sponsor, index) => (
                                 <SponsorItem key={index} imageLink={sponsor.imageLink} altText={sponsor.altText} />
                             ))}
+                        </div>
+                        {/* MEDIA PARTNET LIST */}
+                        <p className="font-space mt-4 text-center text-xl font-semibold text-white opacity-90 md:text-2xl lg:text-3xl">
+                            Our Media Partner
+                        </p>
+                        <div className="grid w-full grid-cols-2 flex-row flex-wrap items-start justify-start gap-2 sm:gap-3 md:mt-4 md:grid-cols-3 md:gap-4">
+                            {MediaPartnerDatas.map((mediaPartner, index) => (
+                                <SponsorItem key={index} imageLink={mediaPartner.imgLink} altText={mediaPartner.imgAlt} />
+                            ))}
+                        </div>
+                        {/* BROADCAST */}
+                        <p className="font-space mt-4 text-center text-xl font-semibold text-white opacity-90 md:text-2xl lg:text-3xl">
+                            Oficial Broadcast Partner
+                        </p>
+                        <div className="flex w-full grid-cols-2 place-items-center gap-2 sm:gap-3 md:mt-4 md:grid-cols-3 md:gap-4">
+                            <SponsorItem imageLink={'logo_broadcaster.png'} altText={'XD Radio'} />
                         </div>
                     </div>
                 </section>
