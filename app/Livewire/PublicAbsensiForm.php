@@ -55,6 +55,7 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                             TextInput::make('nim')
                                 ->label('NIM')
                                 ->required()
+                                ->numeric()
                                 ->unique(
                                     table: 'attendance',
                                     column: 'nim',
@@ -86,6 +87,7 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                         TextInput::make('nomor_telepon')
                             ->label('Nomor Telepon')
                             ->tel()
+                            ->numeric()
                             ->required(),
 
                         FileUpload::make('bukti_foto')
@@ -94,7 +96,8 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                             ->disk('r2') // Change this from 'private' to 'public'
                             ->image()
                             ->visibility('public') // Ensures the file is readable by the web server
-                            ->required(),
+                            ->required()
+                            ->maxSize(512),
 
                         SignaturePad::make('ttd')
                             ->label('Tanda Tangan Digital')
