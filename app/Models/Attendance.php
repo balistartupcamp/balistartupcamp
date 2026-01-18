@@ -18,6 +18,7 @@ class Attendance extends Model
         'nomor_telepon',
         'ttd',
         'bukti_foto',
+        'status',
     ];
 
     public function absensi()

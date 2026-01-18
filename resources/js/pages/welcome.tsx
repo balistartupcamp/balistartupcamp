@@ -12,6 +12,7 @@ import MediaPartnerDatas from '@/datas/media_partner.json';
 import MentorDatas from '@/datas/mentors.json';
 import NarasumberDatas from '@/datas/narasumbers.json';
 import RundownDatas from '@/datas/rundown.json';
+import SharingSessionDatas from '@/datas/sharing-session.json';
 import SponsorDatas from '@/datas/sponsors.json';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Head } from '@inertiajs/react';
@@ -289,6 +290,34 @@ export default function Welcome() {
                         </div>
                     </div>
                 </section>
+
+                {/* SHARING SESSION'S SECTION */}
+                <section className="relative flex w-full flex-col items-center justify-center">
+                    <div className="max-w-9xl flex w-full flex-col items-center justify-start gap-4 px-6 py-10 sm:px-12 sm:py-16 md:px-16 md:py-24">
+                        <p className="font-space text-xs text-white opacity-70 sm:text-sm md:text-base">Sharing Session</p>
+                        <h2 className="font-space mb-3 max-w-[768px] text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+                            Inspiring Stories from <span className="text-gray-200 underline">Startup Founders</span>
+                        </h2>
+                        <p className="font-space max-w-[564px] text-center text-sm text-white opacity-80 sm:text-base md:text-lg">
+                            Sesi berbagi pengalaman langsung dari para founder tentang perjalanan, tantangan, dan pelajaran berharga dalam membangun
+                            startup.
+                        </p>
+
+                        {/* MENTOR LIST */}
+                        <div className="mt-6 grid w-full grid-cols-1 flex-wrap items-stretch justify-start gap-4 overflow-hidden sm:grid-cols-2 md:grid-cols-3">
+                            {SharingSessionDatas.map((sharingSession, index) => (
+                                <MentorCard
+                                    key={index}
+                                    name={sharingSession.name}
+                                    image={sharingSession.image}
+                                    startup={sharingSession.startup}
+                                    link={sharingSession.link}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                </section>
+                {/* SHARING SESSION'S SECTION */}
 
                 {/* SCHEDULE SECTION */}
                 <section ref={scheduleSection} className="relative flex w-full flex-col items-center justify-center">
