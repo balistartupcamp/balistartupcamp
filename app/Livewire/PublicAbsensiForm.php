@@ -16,7 +16,6 @@ use Filament\Schemas\Schema;                      // Changed from Form
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
-
 class PublicAbsensiForm extends Component implements HasSchemas, HasActions
 {
     use InteractsWithSchemas;
@@ -44,7 +43,10 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
         // Change ->schema() to ->components()
         return $schema
             ->components([
+                \Filament\Schemas\Components\View::make('forms.absensi-header'),
+
                 Section::make($this->absensi->title)
+                    ->extraAttributes(['style' => 'font-size: 24px;'])
                     ->description('Silakan isi data kehadiran Anda.')
                     ->schema([ // Layout components inside a Section still use ->schema()
                         TextInput::make('nama_lengkap')
@@ -55,6 +57,7 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                             TextInput::make('nim')
                                 ->label('NIM')
                                 ->required()
+                                ->numeric()
                                 ->unique(
                                     table: 'attendance',
                                     column: 'nim',
@@ -86,15 +89,17 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                         TextInput::make('nomor_telepon')
                             ->label('Nomor Telepon')
                             ->tel()
+                            ->numeric()
                             ->required(),
 
                         FileUpload::make('bukti_foto')
                             ->label('Foto Bukti')
                             ->directory('attendance/foto')
-                            ->disk('public') // Change this from 'private' to 'public'
+                            ->disk('r2') // Change this from 'private' to 'public'
                             ->image()
                             ->visibility('public') // Ensures the file is readable by the web server
-                            ->required(),
+                            ->required()
+                            ->maxSize(512),
 
                         SignaturePad::make('ttd')
                             ->label('Tanda Tangan Digital')

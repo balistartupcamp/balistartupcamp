@@ -79,10 +79,11 @@ class AttendanceResource extends Resource
                 TextEntry::make('nama_startup'),
                 TextEntry::make('nomor_telepon'),
                 ImageEntry::make('ttd')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->extraAttributes(['class' => 'w-full overflow-hidden flex justify-center items-center']),
                 ImageEntry::make('bukti_foto')
                     ->label('Foto Bukti')
-                    ->disk('public') // Tells Filament to look in storage/app/public
+                    ->disk('r2') // Tells Filament to look in storage/app/public
                     ->visibility('public')
                     ->square(),
                 TextEntry::make('created_at')
@@ -115,9 +116,8 @@ class AttendanceResource extends Resource
                     ->searchable(),
                 ImageColumn::make('bukti_foto')
                     ->label('Foto Bukti')
-                    ->disk('public') // Tells Filament to look in storage/app/public
-                    ->visibility('public')
-                    ->square(),
+                    ->disk('r2')
+                    ->visibility('public'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -156,7 +156,7 @@ class AttendanceResource extends Resource
 
         // 2. Loop through records and add rows
         foreach ($records as $record) {
-            $table->addRow(1000); // Set a minimum row height for images
+            $table->addRow(1000);
 
             $table->addCell(2000)->addText($record->absensi->title ?? 'N/A');
             $table->addCell(3000)->addText($record->nama_lengkap);
@@ -166,8 +166,8 @@ class AttendanceResource extends Resource
             $table->addCell(2000)->addText($record->nama_startup);
 
             $photoCell = $table->addCell(2000);
-            if ($record->bukti_foto && \Illuminate\Support\Facades\Storage::disk('public')->exists($record->bukti_foto)) {
-                $fullPath = \Illuminate\Support\Facades\Storage::disk('public')->path($record->bukti_foto);
+            if ($record->bukti_foto && \Illuminate\Support\Facades\Storage::disk('r2')->exists($record->bukti_foto)) {
+                $fullPath = \Illuminate\Support\Facades\Storage::disk('r2')->get($record->bukti_foto);
                 $photoCell->addImage($fullPath, ['width' => 60, 'height' => 60]);
             } else {
                 $photoCell->addText('No Photo', ['size' => 8]);
