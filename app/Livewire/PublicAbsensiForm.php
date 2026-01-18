@@ -91,7 +91,7 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                         FileUpload::make('bukti_foto')
                             ->label('Foto Bukti')
                             ->directory('attendance/foto')
-                            ->disk('public') // Change this from 'private' to 'public'
+                            ->disk('r2') // Change this from 'private' to 'public'
                             ->image()
                             ->visibility('public') // Ensures the file is readable by the web server
                             ->required(),
