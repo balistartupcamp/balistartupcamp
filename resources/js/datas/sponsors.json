@@ -14,5 +14,14 @@
     {
         "imageLink": "zero_studio_logo.jpg",
         "altText": "Logo Zero Studio"
+    },
+    {
+        "imageLink": "bayuna.PNG",
+        "altText": "Logo Bayuna"
+    },
+    {
+        "imageLink": "sematbali.PNG",
+        "altText": "Logo Semat Bali",
+        "extra": "circle"
     }
 ]

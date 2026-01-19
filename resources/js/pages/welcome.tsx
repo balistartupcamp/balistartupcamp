@@ -384,7 +384,7 @@ export default function Welcome() {
                         {/* SPONSOR LIST */}
                         <div className="mt-4 grid w-full grid-cols-2 flex-row flex-wrap items-start justify-start gap-2 sm:gap-3 md:grid-cols-3 md:gap-4">
                             {SponsorDatas.map((sponsor, index) => (
-                                <SponsorItem key={index} imageLink={sponsor.imageLink} altText={sponsor.altText} />
+                                <SponsorItem key={index} imageLink={sponsor.imageLink} altText={sponsor.altText} extra={sponsor.extra} />
                             ))}
                         </div>
                         {/* MEDIA PARTNET LIST */}
@@ -393,7 +393,7 @@ export default function Welcome() {
                         </p>
                         <div className="grid w-full grid-cols-2 flex-row flex-wrap items-start justify-start gap-2 sm:gap-3 md:mt-4 md:grid-cols-3 md:gap-4">
                             {MediaPartnerDatas.map((mediaPartner, index) => (
-                                <SponsorItem key={index} imageLink={mediaPartner.imgLink} altText={mediaPartner.imgAlt} />
+                                <SponsorItem key={index} imageLink={mediaPartner.imgLink} altText={mediaPartner.imgAlt} extra={mediaPartner.extra} />
                             ))}
                         </div>
                         {/* BROADCAST */}
