@@ -15,7 +15,13 @@ use Filament\Schemas\Contracts\HasSchemas;         // Correct for v4
 use Filament\Schemas\Schema;                      // Changed from Form
 use Livewire\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Str;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
 use Saade\FilamentAutograph\Forms\Components\SignaturePad;
+use Illuminate\Support\Facades\Storage;
+
 class PublicAbsensiForm extends Component implements HasSchemas, HasActions
 {
     use InteractsWithSchemas;
@@ -110,7 +116,21 @@ class PublicAbsensiForm extends Component implements HasSchemas, HasActions
                             ->image()
                             ->visibility('public') // Ensures the file is readable by the web server
                             ->required()
-                            ->maxSize(512),
+                            ->saveUploadedFileUsing(function (UploadedFile $file) {
+
+                                $manager = new ImageManager(new Driver());
+
+                                $image = $manager->read($file->getRealPath())
+                                    ->scaleDown(1280)
+                                    ->toJpeg(70);
+
+                                $filename = Str::uuid() . '.jpg';
+                                $path = 'attendance/foto/' . $filename;
+
+                                Storage::disk('r2')->put($path, (string) $image, 'public');
+
+                                return $path;
+                            }),
 
                         SignaturePad::make('ttd')
                             ->label('Tanda Tangan Digital')
