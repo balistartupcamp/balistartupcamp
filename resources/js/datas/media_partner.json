@@ -1,7 +1,8 @@
 [
     {
         "imgLink": "@bandung.vibes.png",
-        "imgAlt": "Bandung Vibes"
+        "imgAlt": "Bandung Vibes",
+        "extra": "circle"
     },
     {
         "imgLink": "@infobadungbali.jpg",
@@ -13,7 +14,8 @@
     },
     {
         "imgLink": "@infosemeton.bali.jpg",
-        "imgAlt": "Info Semeton Bali"
+        "imgAlt": "Info Semeton Bali",
+        "extra": "circle"
     },
     {
         "imgLink": "@lensaberitabali.jpg",
@@ -33,7 +35,8 @@
     },
     {
         "imgLink": "@sesetanpost.JPG",
-        "imgAlt": "Sesetan Post"
+        "imgAlt": "Sesetan Post",
+        "extra": "circle"
     },
     {
         "imgLink": "@situs_bali.JPG",
@@ -45,11 +48,13 @@
     },
     {
         "imgLink": "@therakyatbali.JPG",
-        "imgAlt": "The Rakyat Bali"
+        "imgAlt": "The Rakyat Bali",
+        "extra": "circle"
     },
     {
         "imgLink": "Logo_Info_Tegallalang.jpg",
-        "imgAlt": "Info Tegallalang"
+        "imgAlt": "Info Tegallalang",
+        "extra": "circle"
     },
     {
         "imgLink": "partnershipsid.png",
