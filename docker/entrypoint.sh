@@ -5,4 +5,5 @@ php artisan storage:link --force
 php artisan migrate --force
 php artisan optimize
 
-exec apache2-foreground
+# Start supervisor (runs Apache + Queue Worker)
+exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf

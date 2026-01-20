@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     cron \
-    curl
+    curl \
+    supervisor
 
 
 # Install extensions
@@ -47,6 +48,13 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
 # Set Custom php.ini
 COPY ./docker/php/php.ini "$PHP_INI_DIR/php.ini"
+
+# Copy supervisor configuration
+COPY ./docker/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+COPY ./docker/supervisor/supervisor.d/ /etc/supervisor/conf.d/
+
+# Create supervisor log directory
+RUN mkdir -p /var/log/supervisor
 
 RUN rm -r /var/www/*
 
@@ -76,6 +84,5 @@ RUN chmod +x /usr/local/bin/entrypoint.sh
 
 # 7. Set the script as the entrypoint
 ENTRYPOINT ["entrypoint.sh"]
-# --- THE FIX ENDS HERE ---
 
 RUN a2enmod rewrite

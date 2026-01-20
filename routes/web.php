@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExportDownloadController;
 use App\Livewire\PublicAbsensiForm;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -8,7 +9,7 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
-Route::get("/links", function() {
+Route::get("/links", function () {
     return Inertia::render('links');
 });
 
@@ -25,3 +26,8 @@ Route::get('/absen/signature/{attendance}', function (App\Models\Attendance $att
 
     return response($content)->header('Content-Type', 'image/png');
 })->name('signature.view');
+
+// Export download route (requires authentication)
+Route::get('/exports/{exportFile}/download', [ExportDownloadController::class, 'download'])
+    ->middleware(['auth'])
+    ->name('exports.download');
