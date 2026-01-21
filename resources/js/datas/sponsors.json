@@ -23,5 +23,19 @@
         "imageLink": "sematbali.PNG",
         "altText": "Logo Semat Bali",
         "extra": "circle"
+    },
+    {
+        "imageLink": "maleo_ai.PNG",
+        "altText": "Logo Maleo AI"
+    },
+    {
+        "imageLink": "wardah.PNG",
+        "altText": "logo_wardah",
+        "extra": "circle"
+    },
+    {
+        "imageLink": "Dreamy_Flowers.PNG",
+        "altText": "Logo Dreamy_Flowers",
+        "extra": "circle"
     }
 ]
