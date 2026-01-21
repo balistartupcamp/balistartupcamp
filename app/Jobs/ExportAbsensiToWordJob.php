@@ -11,6 +11,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpWord\IOFactory;
 use PhpOffice\PhpWord\PhpWord;
@@ -77,6 +78,7 @@ class ExportAbsensiToWordJob implements ShouldQueue
             $table->addCell(1500)->addText('NIM', ['bold' => true]);
             $table->addCell(2000)->addText('Prodi', ['bold' => true]);
             $table->addCell(1500)->addText('Nomor Telepon', ['bold' => true]);
+            $table->addCell(1000)->addText('Pukul', ['bold' => true]);
             $table->addCell(2000)->addText('Startup', ['bold' => true]);
             $table->addCell(2000)->addText('Foto Bukti', ['bold' => true]);
             $table->addCell(2000)->addText('Tanda Tangan', ['bold' => true]);
@@ -92,6 +94,7 @@ class ExportAbsensiToWordJob implements ShouldQueue
                 $table->addCell(1500)->addText($record->nim);
                 $table->addCell(2000)->addText($record->program_studi);
                 $table->addCell(1500)->addText($record->nomor_telepon);
+                $table->addCell(1000)->addText(Carbon::parse($record->created_at)->locale('id')->timezone('Asia/Makassar')->translatedFormat('d F Y, H:i'));
                 $table->addCell(2000)->addText($record->nama_startup);
 
                 $photoCell = $table->addCell(2000);

@@ -30,6 +30,7 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Nette\Utils\ImageColor;
 use PhpOffice\PhpWord\IOFactory;
@@ -90,6 +91,14 @@ class AttendanceResource extends Resource
                 TextEntry::make('program_studi'),
                 TextEntry::make('nama_startup'),
                 TextEntry::make('nomor_telepon'),
+                TextEntry::make('created_at')
+                    ->label("Pukul")
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)
+                            ->locale('id')
+                            ->timezone('Asia/Makassar')
+                            ->translatedFormat('d F Y, H:i');
+                    }),
                 TextEntry::make('status'),
                 ImageEntry::make('ttd')
                     ->columnSpanFull()
@@ -99,12 +108,6 @@ class AttendanceResource extends Resource
                     ->disk('r2') // Tells Filament to look in storage/app/public
                     ->visibility('public')
                     ->square(),
-                TextEntry::make('created_at')
-                    ->dateTime()
-                    ->placeholder('-'),
-                TextEntry::make('updated_at')
-                    ->dateTime()
-                    ->placeholder('-'),
             ]);
     }
 
@@ -127,16 +130,20 @@ class AttendanceResource extends Resource
                     ->searchable(),
                 TextColumn::make('nomor_telepon')
                     ->searchable(),
+                TextColumn::make('created_at')
+                    ->label('Pukul')
+                    ->formatStateUsing(function ($state) {
+                        return Carbon::parse($state)
+                            ->locale('id')
+                            ->timezone('Asia/Makassar')
+                            ->translatedFormat('d F Y, H:i');
+                    }),
                 ImageColumn::make('ttd')
                     ->searchable(),
                 ImageColumn::make('bukti_foto')
                     ->label('Foto Bukti')
                     ->disk('r2')
                     ->visibility('public'),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
