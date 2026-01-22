@@ -4,16 +4,18 @@ import { useState } from 'react';
 const menuItems = [
     {
         id: 1,
-        title: 'Pendaftaran Peserta',
+        title: 'Peraturan Peserta',
+        subtitle: 'Peraturan yang Wajib Diikuti Peserta',
         icon: Briefcase,
-        href: 'https://s.id/PendaftaranBSC25',
-        highlighted: true,
+        href: 'https://s.id/PeraturanPesertaBSC2025',
     },
     {
         id: 2,
-        title: 'Form Pembayaran',
+        title: 'Referensi Ide Masalah Sekitar Bali',
+        subtitle: 'Berbagai Referensi Ide Masalah Sekitar Bali',
         icon: Briefcase,
-        href: 'https://s.id/FormPembayaranBSC',
+        href: 'https://s.id/ReferensiPemerataanMasalah',
+        highlighted: true,
     },
     {
         id: 3,
@@ -68,14 +70,14 @@ export default function LinksPage() {
                     {/* Title and Subtitle */}
                     <div className="space-y-2 text-center">
                         <h1 className="font-space text-4xl font-bold tracking-tight text-white md:text-5xl">Bali Startup Camp 2025</h1>
-                        <p className="font-space text-lg text-gray-300">First Step to Real Impact</p>
+                        <p className="font-space text-lg text-white/60">First Step to Real Impact</p>
                     </div>
 
                     {/* Instagram Icon */}
                     <div className="flex justify-center">
                         <a
                             href="https://www.instagram.com/bali.startup/"
-                            className="text-gray-400 transition-colors hover:text-white"
+                            className="text-white/60 transition-colors hover:text-white"
                             aria-label="Instagram"
                         >
                             <Instagram size={24} />
@@ -97,28 +99,28 @@ export default function LinksPage() {
                                     className={`group relative flex items-center gap-4 rounded-xl px-6 py-4 transition-all duration-300 ${
                                         isHighlighted
                                             ? 'bg-gradient-to-r from-blue-600 to-blue-700 shadow-lg shadow-blue-500/50 hover:from-blue-700 hover:to-blue-800'
-                                            : 'border border-slate-700/30 bg-slate-800/50 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-700/60'
+                                            : 'border border-slate-700/30 bg-black/20 backdrop-blur-sm hover:border-slate-600/50 hover:bg-slate-700/60'
                                     }`}
                                 >
                                     {/* Icons */}
                                     <IconComponent
                                         size={24}
                                         className={`flex-shrink-0 transition-colors ${
-                                            isHighlighted ? 'text-white' : 'text-gray-300 group-hover:text-white'
+                                            isHighlighted ? 'text-white' : 'text-white/70 group-hover:text-white'
                                         }`}
                                     />
 
                                     {/* Text Content */}
                                     <div className="min-w-0 flex-1">
                                         <p
-                                            className={`font-space text-base font-semibold transition-colors ${isHighlighted ? 'text-white' : 'text-gray-100'}`}
+                                            className={`font-space text-base font-semibold transition-colors ${isHighlighted ? 'text-white' : 'text-white/80 group-hover:text-white'}`}
                                         >
                                             {item.title}
                                         </p>
                                         {item.subtitle && (
                                             <p
                                                 className={`font-space text-sm transition-colors ${
-                                                    isHighlighted ? 'text-blue-100' : 'text-gray-400 group-hover:text-gray-300'
+                                                    isHighlighted ? 'text-blue-100' : 'text-white/60 group-hover:text-white/80'
                                                 }`}
                                             >
                                                 {item.subtitle}
@@ -131,7 +133,7 @@ export default function LinksPage() {
                                         size={20}
                                         className={`flex-shrink-0 transition-all duration-300 ${
                                             hoveredItem === item.id ? 'translate-x-1 opacity-100' : 'opacity-70'
-                                        } ${isHighlighted ? 'text-white' : 'text-gray-400'}`}
+                                        } ${isHighlighted ? 'text-white' : 'text-white group-hover:text-white'}`}
                                     />
                                 </a>
                             );
