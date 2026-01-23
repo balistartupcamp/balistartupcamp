@@ -1,5 +1,9 @@
 [
     {
+        "imageLink": "baliphotograf.jpg",
+        "altText": "Logo baliphotograf"
+    },
+    {
         "imageLink": "gba_logo.png",
         "altText": "Logo GBA"
     },
@@ -37,5 +41,9 @@
         "imageLink": "Dreamy_Flowers.PNG",
         "altText": "Logo Dreamy_Flowers",
         "extra": "circle"
+    },
+    {
+        "imageLink": "NITS_ID.png",
+        "altText": "Logo NITS_ID "
     }
 ]
