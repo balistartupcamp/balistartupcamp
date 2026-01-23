@@ -6,67 +6,67 @@
                 "time": "08:00 - 08:45",
                 "duration": "45 menit",
                 "activity": "Check In",
-                "description": "Peserta melakukan registrasi dan verifikasi kehadiran."
+                "description": "Registrasi dan verifikasi kehadiran peserta."
             },
             {
                 "time": "08:45 - 09:15",
                 "duration": "30 menit",
                 "activity": "Opening Ceremony & Speech",
-                "description": "Pembukaan acara dan sambutan dari penyelenggara."
+                "description": "Pembukaan acara dan sambutan resmi."
             },
             {
-                "time": "09:15 - 10:00",
-                "duration": "45 menit",
+                "time": "09:15 - 10:15",
+                "duration": "1 jam",
                 "activity": "Workshop Idea Startup & Problem Validation",
-                "description": "Peserta mempelajari validasi ide dan permasalahan."
+                "description": "Pembahasan ide startup dan validasi permasalahan."
             },
             {
-                "time": "10:00 - 10:10",
+                "time": "10:15 - 10:25",
                 "duration": "10 menit",
-                "activity": "Presenting Startup Idea",
-                "description": "Tim mempresentasikan ide startup awal."
+                "activity": "Presenting a Startup Idea",
+                "description": "Peserta mempresentasikan ide startup."
             },
             {
-                "time": "10:10 - 10:20",
+                "time": "10:25 - 10:35",
                 "duration": "10 menit",
-                "activity": "Perkenalan Mentor",
-                "description": "Mentor memperkenalkan peran dan pengalaman mereka."
+                "activity": "Workshop Idea Startup & Problem Validation (Lanjutan)",
+                "description": "Pendalaman materi validasi ide."
             },
             {
-                "time": "10:20 - 10:35",
+                "time": "10:35 - 10:50",
                 "duration": "15 menit",
                 "activity": "Coffee Break",
-                "description": "Peserta beristirahat sambil menikmati konsumsi."
+                "description": "Waktu istirahat dan konsumsi."
             },
             {
-                "time": "10:35 - 11:50",
+                "time": "10:50 - 12:05",
                 "duration": "1 jam 15 menit",
                 "activity": "Mentoring Session Idea Startup & Problem Validation",
-                "description": "Mentor membantu validasi ide dan masalah."
+                "description": "Sesi mentoring bersama mentor."
             },
             {
-                "time": "11:50 - 13:15",
+                "time": "12:05 - 13:30",
                 "duration": "1 jam 25 menit",
                 "activity": "Break",
-                "description": "Waktu istirahat dan persiapan sesi berikutnya."
+                "description": "Istirahat makan siang."
             },
             {
-                "time": "13:15 - 14:00",
-                "duration": "45 menit",
+                "time": "13:30 - 14:30",
+                "duration": "1 jam",
                 "activity": "Workshop Developing Prototype & User Testing Preparation",
-                "description": "Peserta belajar menyiapkan prototipe dan pengujian."
+                "description": "Persiapan prototipe dan user testing."
             },
             {
-                "time": "14:00 - 15:15",
+                "time": "14:30 - 15:45",
                 "duration": "1 jam 15 menit",
                 "activity": "Mentoring Session Developing Prototype & User Testing Preparation",
-                "description": "Mentor membimbing pengembangan prototipe."
+                "description": "Pendampingan pengembangan prototipe."
             },
             {
-                "time": "15:15 - 15:30",
+                "time": "15:45 - 16:00",
                 "duration": "15 menit",
                 "activity": "Closing by MC & Checkout User Testing Assignment",
-                "description": "Penutupan hari pertama dan penugasan peserta."
+                "description": "Penutupan hari pertama dan penugasan."
             }
         ]
     },
@@ -77,49 +77,49 @@
                 "time": "09:00 - 09:45",
                 "duration": "45 menit",
                 "activity": "Check In",
-                "description": "Peserta melakukan kehadiran hari kedua."
+                "description": "Registrasi kehadiran hari kedua."
             },
             {
                 "time": "09:45 - 10:00",
                 "duration": "15 menit",
                 "activity": "Opening Day 2",
-                "description": "Pembukaan kegiatan hari kedua."
+                "description": "Pembukaan agenda hari kedua."
             },
             {
                 "time": "10:00 - 11:15",
                 "duration": "1 jam 15 menit",
                 "activity": "Mentoring Session User Testing Result & Final Prototype",
-                "description": "Evaluasi hasil user testing dan prototipe akhir."
+                "description": "Evaluasi hasil user testing dan final prototype."
             },
             {
                 "time": "11:15 - 12:00",
                 "duration": "45 menit",
-                "activity": "Final Prototype Idea BMC",
-                "description": "Finalisasi ide, BMC, dan prototipe."
+                "activity": "Final Prototype Startup",
+                "description": "Finalisasi prototype mandiri oleh para peserta"
             },
             {
                 "time": "12:00 - 13:00",
                 "duration": "1 jam",
                 "activity": "Break",
-                "description": "Waktu istirahat sebelum sesi lanjutan."
+                "description": "Istirahat siang."
             },
             {
-                "time": "13:00 - 13:45",
-                "duration": "45 menit",
+                "time": "13:00 - 14:00",
+                "duration": "1 jam",
                 "activity": "Workshop Business Model & Pitching",
-                "description": "Peserta mempelajari model bisnis dan pitching."
+                "description": "Materi business model dan pitching."
             },
             {
-                "time": "13:45 - 15:00",
+                "time": "14:00 - 15:15",
                 "duration": "1 jam 15 menit",
                 "activity": "Mentoring Session Business Model & Pitching",
-                "description": "Mentor membantu penyempurnaan pitching."
+                "description": "Pendampingan pitching bersama mentor."
             },
             {
-                "time": "15:00 - 15:15",
+                "time": "15:15 - 15:30",
                 "duration": "15 menit",
                 "activity": "Closing by MC & Checkout",
-                "description": "Penutupan hari kedua acara."
+                "description": "Penutupan hari kedua."
             }
         ]
     },
@@ -130,73 +130,85 @@
                 "time": "08:00 - 08:45",
                 "duration": "45 menit",
                 "activity": "Check In",
-                "description": "Registrasi kehadiran peserta hari terakhir."
+                "description": "Registrasi peserta hari ketiga."
             },
             {
-                "time": "08:45 - 09:00",
-                "duration": "15 menit",
-                "activity": "Opening Day 3",
-                "description": "Pembukaan agenda hari ketiga."
+                "time": "08:45 - 08:50",
+                "duration": "5 menit",
+                "activity": "Opening MC Day 3",
+                "description": "Pembukaan acara oleh MC."
             },
             {
-                "time": "09:00 - 09:45",
-                "duration": "45 menit",
+                "time": "08:50 - 09:50",
+                "duration": "1 jam",
                 "activity": "Sharing Session with Founder",
-                "description": "Founder berbagi pengalaman membangun startup."
+                "description": "Sesi berbagi pengalaman bersama founder."
             },
             {
-                "time": "09:45 - 10:00",
-                "duration": "15 menit",
-                "activity": "Pengumuman Finalis Pitch",
-                "description": "Pengumuman tim finalis pitching."
+                "time": "09:50 - 09:55",
+                "duration": "5 menit",
+                "activity": "Announce Team Pitching",
+                "description": "Pengumuman urutan tim pitching."
             },
             {
-                "time": "10:00 - 10:15",
+                "time": "09:55 - 10:10",
                 "duration": "15 menit",
                 "activity": "Coffee Break",
-                "description": "Istirahat singkat sebelum pitching."
+                "description": "Istirahat singkat."
             },
             {
-                "time": "10:15 - 11:45",
+                "time": "10:10 - 10:40",
+                "duration": "30 menit",
+                "activity": "Sharing by Wardah",
+                "description": "Sesi sharing dari Wardah."
+            },
+            {
+                "time": "10:40 - 10:50",
+                "duration": "10 menit",
+                "activity": "Perkenalan Juri",
+                "description": "Perkenalan para juri."
+            },
+            {
+                "time": "10:50 - 12:20",
                 "duration": "1 jam 30 menit",
                 "activity": "Pitching Sesi 1",
-                "description": "Finalis mempresentasikan startup di sesi pertama."
+                "description": "Pitching 18 tim."
             },
             {
-                "time": "11:45 - 12:45",
+                "time": "12:20 - 13:20",
                 "duration": "1 jam",
                 "activity": "Break Lunch Time",
-                "description": "Istirahat makan siang peserta."
+                "description": "Istirahat siang."
             },
             {
-                "time": "12:45 - 13:00",
+                "time": "13:20 - 13:35",
                 "duration": "15 menit",
                 "activity": "Hiburan UKM Musik",
-                "description": "Penampilan musik dari UKM kampus."
+                "description": "Hiburan special dari UKM Musik Primakara"
             },
             {
-                "time": "13:00 - 14:00",
-                "duration": "1 jam",
+                "time": "13:35 - 15:00",
+                "duration": "1 jam 25 menit",
                 "activity": "Pitching Sesi 2",
-                "description": "Finalis melanjutkan pitching sesi kedua."
+                "description": "Pitching 17 tim."
             },
             {
-                "time": "14:00 - 14:20",
+                "time": "15:00 - 15:20",
                 "duration": "20 menit",
                 "activity": "Hiburan UKM Dance",
-                "description": "Pertunjukan tari dari UKM kampus."
+                "description": "Hiburan special dari UKM Dance Primakara"
             },
             {
-                "time": "14:20 - 14:55",
+                "time": "15:20 - 15:55",
                 "duration": "35 menit",
                 "activity": "Awarding & Closing Statement",
-                "description": "Pengumuman pemenang dan penutupan acara."
+                "description": "Sesi penutupan dan penghargaan acara."
             },
             {
-                "time": "14:55 - 15:00",
+                "time": "15:55 - 16:00",
                 "duration": "5 menit",
                 "activity": "Check Out",
-                "description": "Peserta menyelesaikan administrasi akhir"
+                "description": "Checkout kepulangan peserta"
             }
         ]
     }
