@@ -169,28 +169,28 @@
                 "description": "Perkenalan para juri."
             },
             {
-                "time": "10:50 - 12:20",
-                "duration": "1 jam 30 menit",
+                "time": "10:50 - 12:00",
+                "duration": "1 jam 10 menit",
                 "activity": "Pitching Sesi 1",
-                "description": "Pitching 18 tim."
+                "description": "Pitching 14 tim."
             },
             {
-                "time": "12:20 - 13:20",
+                "time": "12:00 - 13:00",
                 "duration": "1 jam",
                 "activity": "Break Lunch Time",
                 "description": "Istirahat siang."
             },
             {
-                "time": "13:20 - 13:35",
+                "time": "13:00 - 13:15",
                 "duration": "15 menit",
                 "activity": "Hiburan UKM Musik",
                 "description": "Hiburan special dari UKM Musik Primakara"
             },
             {
-                "time": "13:35 - 15:00",
-                "duration": "1 jam 25 menit",
+                "time": "13:15 - 15:00",
+                "duration": "1 jam 45 menit",
                 "activity": "Pitching Sesi 2",
-                "description": "Pitching 17 tim."
+                "description": "Pitching 21 tim."
             },
             {
                 "time": "15:00 - 15:20",
